@@ -26,20 +26,22 @@ class Query():
 
         ## show options
         print("\n\nEnter 'back' to go back to main menu.")
-        possible_options_string = "Please enter the number '1"
+        possible_options_string = "Please enter the number '1'"
         if count - 1 > 1:
-            possible_options_string += " ~ " + str(count - 1)
-        possible_options_string += "' to get information of that city."
-        print(possible_options_string)
+            possible_options_string += " ~ '" + str(count - 1) + "'"
+        possible_options_string += " to get information of that city."
+        if count != 1:
+            print(possible_options_string)
 
     ## Show Menu
     def showMenu(self):
         self.status = "show_menu"
         print("\n\n################### Main Menu ###################")
         print("Enter 'quit' to quit the query.")
-        print("Please enter the number '1 ~ 3' to choose a search option.")
+        print("Please enter the number '1' ~ '3' to choose a search option.")
         print("1, Cities information")
         print("2, Route information")
+        print("3, Visualize CSAir's route map")
 
 
 
@@ -94,11 +96,12 @@ class Query():
 
         ## show options
         print("\n\nEnter 'back' to go back to city list.")
-        possible_options_string = "Please enter the number '1"
+        possible_options_string = "Please enter the number '1'"
         if count - 1 > 1:
-            possible_options_string += " ~ " + str(count - 1)
-        possible_options_string += "' to get information of that city."
-        print(possible_options_string)
+            possible_options_string += " ~ '" + str(count - 1) + "'"
+        possible_options_string += " to get information of that city."
+        if count != 1:
+            print(possible_options_string)
 
     ## Show route network info
     def showRouteNetworkInfo(self):
@@ -229,11 +232,13 @@ class Query():
 
         ## under main menu
         if self.status == "show_menu":
-            if input_str == "1":
+            if input_str == "1":                                                       # list all cities that CSAir flies to
                 self.listAllCities()
-            elif input_str == "2":
+            elif input_str == "2":                                                     # show route network info
                 self.showRouteNetworkInfo()
-            elif input_str == "quit":
+            elif input_str == "3":                                                     # Visualize  CSAir's route map
+                self.graph.visualizeCSAirRouteMap()
+            elif input_str == "quit":                                                  # quit query
                 sys.exit(0)
             else:
                 print("Invalid option: " + input_str)

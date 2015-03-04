@@ -5,7 +5,7 @@ from query import Query
 print("\n\nHi there! Welcome to use CSAir information query system\n")
 
 graph = Graph("./data/data.json")
-graph.visualizeCSAirRouteMap()
+#graph.visualizeCSAirRouteMap()
 query = Query(graph)
 query.showMenu()
 while(True):
