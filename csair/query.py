@@ -99,7 +99,7 @@ class Query():
         possible_options_string = "Please enter the number '1'"
         if count - 1 > 1:
             possible_options_string += " ~ '" + str(count - 1) + "'"
-        possible_options_string += " to get information of that city."
+        possible_options_string += " to get information of that destination city."
         if count != 1:
             print(possible_options_string)
 
