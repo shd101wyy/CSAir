@@ -220,6 +220,8 @@ class Query():
             print("      name:       " + cities_and_their_num_of_outbound_flights[i][1].info["name"])
             i += 1
 
+        print("\n\nEnter 'back' to go back to main menu.")
+
 
     ## Process the query
     def processQuery(self):
