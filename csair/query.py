@@ -82,15 +82,15 @@ class Query():
             cities_num += 1
 
         ## process route info
-        self.longest_single_flight = longest_single_flight
-        self.shortest_single_flight = shortest_single_flight
-        self.average_distance = total_distance / route_num
-        self.biggest_city = biggest_city
-        self.smallest_city = smallest_city
-        self.average_population = total_population / cities_num
-        self.continents = continents
+        self.longest_single_flight = longest_single_flight          # set longest single flight
+        self.shortest_single_flight = shortest_single_flight        # set shortest single flight
+        self.average_distance = total_distance / route_num          # calculate average distance
+        self.biggest_city = biggest_city                            # set biggest city
+        self.smallest_city = smallest_city                          # set smallest city
+        self.average_population = total_population / cities_num     # calculate average population
+        self.continents = continents                                # set continents
         cities_and_their_num_of_outbound_flights = sorted(cities_and_their_num_of_outbound_flights, key=lambda t:t[0], reverse=True)
-        self.hub_cites = []
+        self.hub_cites = []                                         # get hub cities
         max_num_of_outbound_flights = cities_and_their_num_of_outbound_flights[0][0]
         self.max_num_of_outbound_flights = max_num_of_outbound_flights
         i = 0
