@@ -55,7 +55,6 @@ class TestQuery(TestCase):
         self.assertEqual(2453, query.average_distance) # check average distance
         self.assertEqual({"from": query.getAllCities()["SCL"], "to": query.getAllCities()["LIM"], "distance": 2453}, query.longest_single_flight) # check longest single flight
         self.assertEqual({"from": query.getAllCities()["SCL"], "to": query.getAllCities()["LIM"], "distance": 2453}, query.shortest_single_flight) # check shortest single flight
-        print(query.continents)
         self.assertEqual(True, "South America" in query.continents) # check continents
         self.assertEqual(2, len(query.continents["South America"]))
         self.assertEqual([query.getAllCities()["SCL"]], query.hub_cites) # check outbound cites
