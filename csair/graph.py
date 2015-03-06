@@ -24,8 +24,8 @@ class Graph:
             destination = self.nodes[ports[1]]
             source.connect(destination, distance)     # connect source and destination
 
-    ## Visualize CSAir's route map
-    def visualizeCSAirRouteMap(self):
+    ## generate url to visualize the map
+    def generateURL(self):
         # eg: http://www.gcmap.com/mapui?P=LIM-MEX,+LIM-BOG,+MEX-LAX
         url = "http://www.gcmap.com/mapui?P="
         url_param = ""
@@ -36,17 +36,22 @@ class Graph:
                 url_param += "+" + city_code +"-" +dest.info["code"] +"," # create param for url
         url_param = url_param[1:-1] # clean url parameters
         url = url + url_param # get url
-        webbrowser.open(url)
+        return url
+
+    ## Visualize CSAir's route map
+    def visualizeCSAirRouteMap(self):
+        webbrowser.open(self.generateURL())
 
 
 
     ## Constructor: initiate graph
     ## Load JSON file, parser JSON data
     ## Generate Graph by JSON data
-    def __init__(self, file_name):
-        json_file = open(file_name) # load JSON file
-        json_data = json.load(json_file) # parse JSON data
-        json_file.close() # close file
+    def __init__(self, file_name, json_data=None):
+        if json_data == None:
+            json_file = open(file_name) # load JSON file
+            json_data = json.load(json_file) # parse JSON data
+            json_file.close() # close file
 
         self.nodes = {} # key is code of the port, value is the node
 
@@ -61,4 +66,4 @@ class Graph:
 
 
 
-# x = Graph("./data/data.json")
+## x = Graph("./data/data.json")

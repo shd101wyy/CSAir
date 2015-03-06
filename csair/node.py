@@ -22,5 +22,5 @@ class Node():
     # Disconnect two ports
     def disconnect(self, dest):
         if dest in self.destinations:
-            self.destinations.remove(dest)
+            self.destinations.pop(dest, None)
 
