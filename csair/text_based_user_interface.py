@@ -175,39 +175,41 @@ class TextBasedUserInterface():
     ## Process the query
     def processQuery(self):
         input_str = input("> ").strip()
-
-        ## under main menu
-        if self.status == "show_menu":
-            if input_str == "1":                                                       # list all cities that CSAir flies to
-                self.listAllCities()
-            elif input_str == "2":                                                     # show route network info
-                self.showRouteNetworkInfo()
-            elif input_str == "3":                                                     # Visualize  CSAir's route map
-                self.query.graph.visualizeCSAirRouteMap()
-            elif input_str == "quit":                                                  # quit query
-                sys.exit(0)
-            else:
-                print("Invalid option: " + input_str)
-        ## under city list
-        elif self.status == "list_cities_CSAir_flies_to":
-            if input_str == "back":                                                    # go back to main menu
-                self.showMenu()
-            elif len(input_str) > 0 and int(input_str) >= 1 and int(input_str) <= len(self.city_list):        # get city info
-                self.chosen_city = self.city_list[int(input_str) - 1] # set chosen city
-                self.showCityInfo()
-            else:
-                print("Invalid option: " + input_str)
-        ## under city info
-        elif self.status == "list_city_information":
-            if input_str == "back":                                                    # go back to city list
-                self.listAllCities()
-            elif len(input_str) > 0 and int(input_str) >= 1 and int(input_str) <= len(self.city_list):        # get city info
-                self.chosen_city = self.city_list[int(input_str) - 1] # set chosen city
-                self.showCityInfo()
-            else:
-                print("Invalid option: " + input_str)
-        elif self.status == "show_route_network_information":
-            if input_str == "back":                                                    # go back to main menu
-                self.showMenu()
-            else:
-                print("Invalid option: " + input_str)
+        try:
+            ## under main menu
+            if self.status == "show_menu":
+                if input_str == "1":                                                       # list all cities that CSAir flies to
+                    self.listAllCities()
+                elif input_str == "2":                                                     # show route network info
+                    self.showRouteNetworkInfo()
+                elif input_str == "3":                                                     # Visualize  CSAir's route map
+                    self.query.graph.visualizeCSAirRouteMap()
+                elif input_str == "quit":                                                  # quit query
+                    sys.exit(0)
+                else:
+                    print("Invalid option: " + input_str)
+            ## under city list
+            elif self.status == "list_cities_CSAir_flies_to":
+                if input_str == "back":                                                    # go back to main menu
+                    self.showMenu()
+                elif len(input_str) > 0 and int(input_str) >= 1 and int(input_str) <= len(self.city_list):        # get city info
+                    self.chosen_city = self.city_list[int(input_str) - 1] # set chosen city
+                    self.showCityInfo()
+                else:
+                    print("Invalid option: " + input_str)
+            ## under city info
+            elif self.status == "list_city_information":
+                if input_str == "back":                                                    # go back to city list
+                    self.listAllCities()
+                elif len(input_str) > 0 and int(input_str) >= 1 and int(input_str) <= len(self.city_list):        # get city info
+                    self.chosen_city = self.city_list[int(input_str) - 1] # set chosen city
+                    self.showCityInfo()
+                else:
+                    print("Invalid option: " + input_str)
+            elif self.status == "show_route_network_information":
+                if input_str == "back":                                                    # go back to main menu
+                    self.showMenu()
+                else:
+                    print("Invalid option: " + input_str)
+        except Exception:
+            print("Invalid option: " + input_str)
