@@ -116,7 +116,6 @@ class TextBasedUserInterface():
     ## Show route network info
     def showRouteNetworkInfo(self):
         self.status = "show_route_network_information"
-        self.query.queryRouteInfo(); ## query route info
         print("\n\n################### Route Network Information ###################")
         # the longest single flight in the network
         print("\n* The longest single flight in the network: ")
@@ -161,12 +160,12 @@ class TextBasedUserInterface():
                 count += 1
 
         # a list of the continents served by CSAir and which cities are in them
-        cities_and_their_num_of_outbound_flights = self.query.cities_and_their_num_of_outbound_flights
-        max_num_of_outbound_flights = cities_and_their_num_of_outbound_flights[0][0]
         print("\n* CSAir's hub cities - the cities that have the most direct connections:")
+        hub_cites = self.query.hub_cites
+        max_num_of_outbound_flights = self.query.max_num_of_outbound_flights
         i = 0
-        while i < len(cities_and_their_num_of_outbound_flights) and cities_and_their_num_of_outbound_flights[i][0] == max_num_of_outbound_flights:
-            print("      name:       " + cities_and_their_num_of_outbound_flights[i][1].info["name"])
+        while i < len(hub_cites):
+            print("      name:       " + hub_cites[i].info["name"])
             i += 1
         print("      max outbound flights num:     " + str(max_num_of_outbound_flights))
 
