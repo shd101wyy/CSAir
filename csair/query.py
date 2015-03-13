@@ -231,11 +231,15 @@ class Query():
         """
         query all required information for the route network
         """
-        self.getLongestSingleFlight()
-        self.getShortestSingleFlight()
-        self.getAverageDistance()
-        self.getBiggestCity()
-        self.getSmallestCity()
-        self.getAverageSizeOfCity()
-        self.getContinentsInformation()
-        self.getHubCities()
+        try:
+            self.getLongestSingleFlight()
+            self.getShortestSingleFlight()
+            self.getAverageDistance()
+            self.getBiggestCity()
+            self.getSmallestCity()
+            self.getAverageSizeOfCity()
+            self.getContinentsInformation()
+            self.getHubCities()
+        except Exception:
+            print("Error occurred when query route info")
+            print(Exception)
