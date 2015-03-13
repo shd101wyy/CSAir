@@ -81,21 +81,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="champaign.json" pinned="false" current-in-tab="false">
+      <file leaf-file-name="champaign.json" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/csair/data/champaign.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.625" vertical-offset="0" max-vertical-offset="885">
+            <state vertical-scroll-proportion="0.4041916" vertical-offset="0" max-vertical-offset="885">
               <caret line="9" column="7" selection-start-line="0" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="champaign_drected.json" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/csair/data/champaign_drected.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6407186" vertical-offset="926" max-vertical-offset="1305">
-              <caret line="76" column="30" selection-start-line="76" selection-start-column="30" selection-end-line="76" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -846,16 +836,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/csair/data/champaign.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.625" vertical-offset="0" max-vertical-offset="885">
+        <state vertical-scroll-proportion="0.4041916" vertical-offset="0" max-vertical-offset="885">
           <caret line="9" column="7" selection-start-line="0" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/csair/data/champaign_drected.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6407186" vertical-offset="926" max-vertical-offset="1305">
-          <caret line="76" column="30" selection-start-line="76" selection-start-column="30" selection-end-line="76" selection-end-column="30" />
           <folding />
         </state>
       </provider>
