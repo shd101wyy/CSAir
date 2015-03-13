@@ -32,11 +32,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="graph.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="graph.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/csair/graph.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.75092936" vertical-offset="811" max-vertical-offset="3750">
-              <caret line="81" column="49" selection-start-line="81" selection-start-column="49" selection-end-line="81" selection-end-column="49" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1832" max-vertical-offset="3750">
+              <caret line="89" column="11" selection-start-line="89" selection-start-column="11" selection-end-line="89" selection-end-column="11" />
               <folding>
                 <element signature="e#24#35#0" expanded="true" />
               </folding>
@@ -128,11 +128,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="graph_test.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="graph_test.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/csair/csair_unittest/graph_test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1037" max-vertical-offset="1635">
-              <caret line="102" column="41" selection-start-line="102" selection-start-column="41" selection-end-line="102" selection-end-column="41" />
+            <state vertical-scroll-proportion="0.41449815" vertical-offset="3092" max-vertical-offset="3630">
+              <caret line="221" column="30" selection-start-line="221" selection-start-column="30" selection-end-line="221" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -158,8 +158,8 @@
         <option value="$PROJECT_DIR$/csair/node.py" />
         <option value="$PROJECT_DIR$/csair/query.py" />
         <option value="$PROJECT_DIR$/csair/text_based_user_interface.py" />
-        <option value="$PROJECT_DIR$/csair/csair_unittest/graph_test.py" />
         <option value="$PROJECT_DIR$/csair/graph.py" />
+        <option value="$PROJECT_DIR$/csair/csair_unittest/graph_test.py" />
       </list>
     </option>
   </component>
@@ -282,7 +282,7 @@
       <recent name="$PROJECT_DIR$/csair" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.main">
+  <component name="RunManager" selected="Python tests.Unittests in graph_test (1)">
     <configuration default="false" name="Unittests in graph_test (1)" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -524,8 +524,8 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.main" />
-        <item index="1" class="java.lang.String" itemvalue="Python tests.Unittests in graph_test (1)" />
+        <item index="0" class="java.lang.String" itemvalue="Python tests.Unittests in graph_test (1)" />
+        <item index="1" class="java.lang.String" itemvalue="Python.main" />
         <item index="2" class="java.lang.String" itemvalue="Python tests.Unittests in node_test" />
         <item index="3" class="java.lang.String" itemvalue="Python tests.Unittests in query_test" />
         <item index="4" class="java.lang.String" itemvalue="Python.text_based_user_interface" />
@@ -755,16 +755,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/csair/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="240">
-          <caret line="5" column="14" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
-          <folding>
-            <element signature="e#24#47#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/csair/data/data.json">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-8.960784" vertical-offset="10508" max-vertical-offset="11055">
@@ -797,16 +787,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/csair/text_based_user_interface.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.481482" vertical-offset="5174" max-vertical-offset="6585">
-          <caret line="362" column="0" selection-start-line="362" selection-start-column="0" selection-end-line="362" selection-end-column="0" />
-          <folding>
-            <element signature="e#48#58#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/csair/csair_unittest/node_test.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1740">
@@ -823,21 +803,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/csair/csair_unittest/graph_test.py">
+    <entry file="file://$PROJECT_DIR$/csair/text_based_user_interface.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1037" max-vertical-offset="1635">
-          <caret line="102" column="41" selection-start-line="102" selection-start-column="41" selection-end-line="102" selection-end-column="41" />
-          <folding />
+        <state vertical-scroll-proportion="-9.481482" vertical-offset="5174" max-vertical-offset="6585">
+          <caret line="362" column="0" selection-start-line="362" selection-start-column="0" selection-end-line="362" selection-end-column="0" />
+          <folding>
+            <element signature="e#48#58#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/csair/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="240">
+          <caret line="5" column="14" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
+          <folding>
+            <element signature="e#24#47#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/csair/graph.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.75092936" vertical-offset="811" max-vertical-offset="3750">
-          <caret line="81" column="49" selection-start-line="81" selection-start-column="49" selection-end-line="81" selection-end-column="49" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1681" max-vertical-offset="3750">
+          <caret line="89" column="11" selection-start-line="89" selection-start-column="11" selection-end-line="89" selection-end-column="11" />
           <folding>
             <element signature="e#24#35#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/csair/csair_unittest/graph_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.41449815" vertical-offset="3092" max-vertical-offset="3630">
+          <caret line="221" column="30" selection-start-line="221" selection-start-column="30" selection-end-line="221" selection-end-column="30" />
+          <folding />
         </state>
       </provider>
     </entry>

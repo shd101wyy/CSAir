@@ -100,5 +100,137 @@ class TestGraph(TestCase):
 
         g.removeCity("LIM")
         self.assertEqual(1, len(g.nodes.keys()))
-        print(g.nodes["SCL"].destinations)
         self.assertEqual(0, len(g.nodes["SCL"].destinations.keys()))
+
+    def testRemoveRoute(self):
+        """
+        Test remove a route
+        """
+        g = Graph(json_data={
+            "metros": [
+                {
+			        "code" : "SCL" ,
+			        "name" : "Santiago" ,
+			        "country" : "CL" ,
+			        "continent" : "South America" ,
+			        "timezone" : -4 ,
+			        "coordinates" : {"S" : 33, "W" : 71} ,
+			        "population" : 6000000 ,
+			        "region" : 1
+		        },
+                {
+                    "code" : "LIM" ,
+                    "name" : "Lima" ,
+                    "country" : "PE" ,
+                    "continent" : "South America" ,
+                    "timezone" : -5 ,
+                    "coordinates" : {"S" : 12, "W" : 77} ,
+                    "population" : 9050000 ,
+                    "region" : 1
+                }],
+                "routes": [
+                    {
+			            "ports" : ["SCL" , "LIM"] ,
+			            "distance" : 2453
+		            }
+                ]
+        })
+        invalid_remove = g.removeRoute("LIM", "SCL")
+        valid_remove = g.removeRoute("SCL", "LIM")
+        self.assertEqual(False, invalid_remove)
+        self.assertEqual(True,  valid_remove)
+        self.assertEqual(2, len(g.nodes.keys()))
+        self.assertEqual(0, len(g.nodes["SCL"].destinations.keys()))
+
+    def testAddCity(self):
+        """
+        Test add city
+        """
+        g = Graph(json_data={
+            "metros": [
+                {
+			        "code" : "SCL" ,
+			        "name" : "Santiago" ,
+			        "country" : "CL" ,
+			        "continent" : "South America" ,
+			        "timezone" : -4 ,
+			        "coordinates" : {"S" : 33, "W" : 71} ,
+			        "population" : 6000000 ,
+			        "region" : 1
+		        },
+                {
+                    "code" : "LIM" ,
+                    "name" : "Lima" ,
+                    "country" : "PE" ,
+                    "continent" : "South America" ,
+                    "timezone" : -5 ,
+                    "coordinates" : {"S" : 12, "W" : 77} ,
+                    "population" : 9050000 ,
+                    "region" : 1
+                }],
+                "routes": [
+                    {
+			            "ports" : ["SCL" , "LIM"] ,
+			            "distance" : 2453
+		            }
+                ]
+        })
+        g.addCity({"code": "Yoo", "name": "Yooo", "country":"UK", "continent": "Europe", "timezone": -4, "coordinates": {"S": 1, "W": 2}, "population": 10, "region": 12})
+        self.assertEqual(3, len(g.nodes.keys()))
+        self.assertNotEqual(False, g.getCityByNameOrCode("Yoo"))
+        self.assertNotEqual(False, g.getCityByNameOrCode("Yooo"))
+
+    def testAddRoute(self):
+        """
+        test add route
+        """
+        g = Graph(json_data={
+            "metros": [
+                {
+			        "code" : "SCL" ,
+			        "name" : "Santiago" ,
+			        "country" : "CL" ,
+			        "continent" : "South America" ,
+			        "timezone" : -4 ,
+			        "coordinates" : {"S" : 33, "W" : 71} ,
+			        "population" : 6000000 ,
+			        "region" : 1
+		        },
+                {
+                    "code" : "LIM" ,
+                    "name" : "Lima" ,
+                    "country" : "PE" ,
+                    "continent" : "South America" ,
+                    "timezone" : -5 ,
+                    "coordinates" : {"S" : 12, "W" : 77} ,
+                    "population" : 9050000 ,
+                    "region" : 1
+                }],
+                "routes": [
+                    {
+			            "ports" : ["SCL" , "LIM"] ,
+			            "distance" : 2453
+		            }
+                ]
+        })
+        g.addRoute("LIM", "SCL", 2000)
+        self.assertEqual(1, len(g.nodes["LIM"].destinations.keys()))
+        self.assertIn(g.nodes["SCL"], g.nodes["LIM"].destinations)
+
+    def testShortestPath(self):
+        """
+            test shortest path
+        """
+        g = Graph("../data/new_data.json")
+
+        result =  g.shortestPath("BOG", "SAO")
+        self.assertEqual(2, len(result))
+
+        result = g.shortestPath("JNB", "ALG")
+        self.assertEqual(5, len(result))
+
+        result = g.shortestPath("LAX", "SYD")
+        self.assertEqual(2, len(result))
+
+        result = g.shortestPath("Yooooo", "LAX")
+        self.assertEqual(False, result)
