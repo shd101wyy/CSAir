@@ -8,6 +8,12 @@ class Query():
     ## Constructor: bind graph
     def __init__(self, graph):
         self.graph = graph        #  bind graph
+        if self.graph.nodes != {}:
+            self.queryRouteInfo()
+
+    ## load json file
+    def loadJSON(self, file_name):
+        self.graph.loadJSON(file_name)
         self.queryRouteInfo()     #  calculate route info
 
     ## get a list of all cities that csair flies to

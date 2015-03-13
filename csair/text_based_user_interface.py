@@ -2,96 +2,72 @@ __author__ = 'wangyiyi'
 __author__ = 'wangyiyi'
 import sys
 from query import Query
+import cmd
+import os
 '''
 Build up the text based user interface.
 '''
-class TextBasedUserInterface():
-    ## Constructor: bind graph
+class TextBasedUserInterface(cmd.Cmd):
     def __init__(self, graph):
-        self.query = Query(graph) ## setup query
-        self.status = "show_menu" #  store status
-        self.chosen_city = ""     #  city that is chosen
-        self.city_list = []       # clear city list
+        cmd.Cmd.__init__(self)
+        self.prompt = "CSAir > "
+        self.intro = "Hi there! Welcome to use CSAir information query system\nPlease use 'load_json_files' commands to load JSON data file first\ntype 'help' to check documented commands"
+        self.query = Query(graph)
 
-    ## Show Menu
-    def showMenu(self):
-        self.status = "show_menu"
-        print("\n\n################### Main Menu ###################")
-        print("Enter 'quit' to quit the query.")
-        print("Please enter the number '1' ~ '3' to choose a search option.")
-        print("1, Cities information")
-        print("2, Route information")
-        print("3, Visualize CSAir's route map")
+    def do_EOF(self, line):
+        return True
 
-        dispatcher = {
-            "1": self.listAllCities,                       # list all cities that CSAir flies to
-            "2": self.showRouteNetworkInfo,              # show route network info
-            "3": self.query.graph.visualizeCSAirRouteMap   # Visualize  CSAir's route map
-        }
-        while True: # read user prompt
-            input_str = input("> ").strip()
-            if input_str in dispatcher:
-                return dispatcher[input_str]()
-            else:
-                print("Invalid option: " + input_str)
+    def do_list_json_files(self, line):
+        """
+            List all loadable JSON files
+        """
+        files = os.listdir("./data/")
+        for file in files:
+            print(file)
 
-    ## List names of all ports that CSAir flies to
-    def listAllCities(self):
-        self.status = "list_cities_CSAir_flies_to"
-        print("\n\n################### City List ################### ")
+    def do_load_json_files(self, line):
+        """
+            Load JSON files
+            load_json_files file1.json file2.json ...
+
+            eg:
+                load_json_files data.json
+                load_json_files old.json new.json
+        """
+        files = line.split(" ")
+        for file_name in files:
+            self.query.loadJSON(file_name)
+
+    def printCities(self):
         nodes = self.query.getAllCities() # get nodes(port)
         count = 1
-        self.city_list = [] # clear city list
 
         # print each city name
         for code in nodes:
             print(str(count) + ": " + nodes[code].info["name"])
-            self.city_list.append(nodes[code])   # store that city to list
             count+=1
 
-        ## show options
-        print("\n\nEnter 'back' to go back to main menu.")
-        possible_options_string = "Please enter the number '1'"
-        if count - 1 > 1:
-            possible_options_string += " ~ '" + str(count - 1) + "'"
-        possible_options_string += " or City Name or City code to get information of that city."
-        if count != 1:
-            print(possible_options_string)
+    def do_city_info(self, line):
+        """
+            Show information of the city
+            usage:
+                   city_info                     -  Show  a list of all the cities that CSAir flies to
+                   city_info [city_name]         -  Get specific information about a specific city in the CSAir route network
+                   city_info [city_code]         -  Get specific information about a specific city in the CSAir route network
 
-        while True: # read user prompt
-            input_str = input(">").strip()
-            if input_str.lower() == "back": # go back to main menu
-                return self.showMenu()
-            elif len(input_str) > 0 and input_str.isdigit() and int(input_str) >= 1 and int(input_str) <= len(self.city_list):        # get city info
-                self.chosen_city = self.city_list[int(input_str) - 1] # set chosen city
-                return self.showCityInfo()
-            else: # check whether user entered valid city name or
-                for city in self.city_list:
-                    city_info = city.info
-                    if city_info["code"] == input_str.upper() or city_info["name"].upper() == input_str.upper():
-                        self.chosen_city = city
-                        return self.showCityInfo()
-                print("Invalid option: " + input_str)
-
-    ## Show City information
-    '''
-    Its code
-    Its name
-    Its country
-    Its continent
-    Its timezone
-    Its latitude and longitude
-    Its population
-    Its region
-    A list of all of the other cities that are accessible via a single non-stop flight from that source city. This list should include the distance of each of those flights.
-    '''
-    def showCityInfo(self):
-        print("\n\n################### City Info ###################")
-        self.status = "list_city_information"
-        city = self.chosen_city
-        city_info = city.info
+            eg:    city_info Beijing
+                   city_info TKO
+        """
+        if len(line) == 0:    # list all cities
+            self.printCities()
+            return
+        city = self.query.graph.getCityByNameOrCode(line) # get specific city
+        if city == False: # didnt find city
+            print("Cannot find city: " + line + " from database")
+            return
 
         # Get all info
+        city_info = city.info
         code = city_info["code"]
         name = city_info["name"]
         country = city_info["country"]
@@ -124,38 +100,25 @@ class TextBasedUserInterface():
         for dest in connections:
             distance = connections[dest]
             self.city_list.append(dest)   # store dest to city list
-            print("\n" + str(count) + ".\nDist:     " + dest.info["name"])
+            print("\n" + str(count) + ".\nDest:     " + dest.info["name"])
             print("Distance: " + str(distance))
             count+=1
 
-        ## show options
-        print("\n\nEnter 'back' to go back to city list.")
-        possible_options_string = "Please enter the number '1'"
-        if count - 1 > 1:
-            possible_options_string += " ~ '" + str(count - 1) + "'"
-        possible_options_string += " or City Name or City code to get information of that destination city."
-        if count != 1:
-            print(possible_options_string)
+    def do_route_info(self, line):
+        """
+            Statistical information about CSAir's route network, such as:
+                a. the longest single flight in the network
+                b. the shortest single flight in the network
+                c. the average distance of all the flights in the network
+                d. the biggest city (by population) served by CSAir
+                e. the smallest city (by population) served by CSAir
+                f. the average size (by population) of all the cities served by CSAir
+                g. a list of the continents served by CSAir and which cities are in them
+                h. identifying CSAir's hub cities – the cities that have the most direct connections.
 
-        while True: # read user prompt
-            input_str = input(">").strip()
-            if input_str.lower() == "back":
-                return self.listAllCities()
-            elif len(input_str) > 0 and input_str.isdigit() and int(input_str) >= 1 and int(input_str) <= len(self.city_list):        # get city info
-                self.chosen_city = self.city_list[int(input_str) - 1] # set chosen city
-                return self.showCityInfo()
-            else: # check whether user entered valid city name or
-                for city in self.city_list:
-                    city_info = city.info
-                    if city_info["code"] == input_str.upper() or city_info["name"].upper() == input_str.upper():
-                        self.chosen_city = city
-                        return self.showCityInfo()
-                print("Invalid option: " + input_str)
-
-    ## Show route network info
-    def showRouteNetworkInfo(self):
-        self.status = "show_route_network_information"
-        print("\n\n################### Route Network Information ###################")
+            usage:
+                route_info
+        """
         # the longest single flight in the network
         print("\n* The longest single flight in the network: ")
         print("      from:     " + self.query.longest_single_flight["from"].info["name"])
@@ -208,11 +171,199 @@ class TextBasedUserInterface():
             i += 1
         print("      max flights num:     " + str(max_num_of_outbound_flights))
 
-        print("\n\nEnter 'back' to go back to main menu.")
+    def do_show_map(self, line):
+        """
+            Visualizing CSAir's route map
+            usage:
+                show_map
+        """
+        self.query.graph.visualizeCSAirRouteMap()
 
-        while True: # read user prompt
-            input_str = input(">").strip()
-            if input_str == "back":
-                return self.showMenu()
+
+    def do_remove_city(self, line):
+        """
+            Remove a city
+            usage:
+                remove_city  [city_name]         remove the city by city name
+                remove_city  [city_code]         remove the city by city code
+
+            eg:
+                remove_city Tokyo
+                remove_city TKO
+        """
+        if len(line) == 0:
+                return
+        if self.query.graph.removeCity(line):
+            print("City: " + line + " removed successfully")
+        else:
+            print("Cannot remove city: " + line)
+
+    def do_remove_route(self, line):
+        """
+            Remove a route
+            usage:
+                remove_route [source city] [destination city]    source city disconnects the destination city
+
+            eg:
+                remove_route Shanghai Taipei    will disconnect Shanghai from Taipei
+                remove_route SHA      TPE
+        """
+        if len(line) == 0:
+            return
+        source_dest = line.split(" ")
+        if len(source_dest) == 2:
+            remove_result = self.query.graph.removeRoute(source_dest[0].strip(), source_dest[1].strip())
+            if remove_result == True: # remove successfully
+                print("Route: " + line + " is removed")
+                return
+        print("Cannot remove route: " + line)
+
+    '''
+        read coordinates from user
+    '''
+    def getUserInputCoordinates(self):
+        while True:
+            input_str = input("please enter the coordinates:(format eg: W 24 S 17):").strip().upper()
+            if len(input_str) == 0:
+                continue
+            coord_info = input_str.split(" ")
+            if len(coord_info) != 4:
+                print("Invalid coordinates: " + input_str)
+            else:
+                try:
+                    return {coord_info[0]: int(coord_info[1]), coord_info[2]: int(coord_info[3])}
+                except Exception:
+                    print("Invalid coordinates: " + input_str)
+
+    def do_add_city(self, line):
+        """
+            Add a new city to database
+            usage:
+                add_city
+        """
+        info_list = ["code", "name", "country", "continent", "timezone", "coordinates", "population", "region"]
+        info = {}
+        for key in info_list:
+            while True:
+                if key == "coordinates":
+                    input_str = self.getUserInputCoordinates()
+                else:
+                    input_str = input("please enter " + key + ": ").strip()
+                if len(input_str) == 0:
+                    continue
+                else:
+                    if key == "population" or key == "region" or key == "timezone":
+                        try:
+                            input_str = int(input_str)
+                        except Exception:
+                            print("Invalid input for " + key + ", which required Integer")
+                            continue
+                    info[key] = input_str
+                    break
+        self.query.graph.addCity(info) # add city to the graph
+        print("City created successfully")
+        print(info)
+
+    def do_add_route(self, line):
+        """
+            add a route
+            usage:
+                add_route [source city] [destination city] [distance]   source city connects the destination city with distance
+
+            eg:
+                add_route PEK TYO 100    will connect Beijing to Tokyo with distance 100
+        """
+        if len(line) == 0:
+            return
+        source_dest_distance = line.split(" ")
+        if len(source_dest_distance) == 3:
+            try:
+                connect_result = self.query.graph.addRoute(source_dest_distance[0].strip(), source_dest_distance[1].strip(), int(source_dest_distance[2].strip()))
+                if connect_result == True: # add successfully
+                    print("Route: " + line + " is connected")
+                    return
+            except Exception:
+                print("Invalid Route: " + line)
+                return
+
+        print("Invalid Route: " + line)
+
+    """
+
+    '''
+        edit existing city
+    '''
+    def editExistingCity(self):
+        print("\n\n################### edit existing city ###################")
+        while True:
+            input_str = input("Please enter the city name or city code: ").strip().lower()
+            if len(input_str) == 0:
+                continue
+            city = self.query.graph.getCityByNameOrCode(input_str)
+            if city != False:
+                break
+            else:
+                print("Couldn't find city: " + input_str)
+
+
+
+    '''
+         online editing of route information
+         1. Remove a city
+         2. Remove a route
+         3. Add a city, including all its necessary information
+         4. Add a route, including all its necessary information
+         5. Edit existing city
+    '''
+    def editRouteNetwork(self):
+        print("\n\n################### Online editing of route information ###################")
+        # self.printCities()
+
+        ## show options
+        print("\n\nPlease choose an option: ")
+        print("back -  Go back to main menu")
+        print("1    -  Remove a city")
+        print("2    -  Remove a route")
+        print("3    -  Add a city")
+        print("4    -  Add a route")
+        print("5    -  Edit existing city")
+
+        dispatcher = {
+            "1": self.removeCity,
+            "2": self.removeRoute,
+            "3": self.addCity,
+            "4": self.addRoute,
+            "5": self.editExistingCity,
+            "back": self.showMenu
+        }
+
+        while True:
+            input_str = input(">").strip().lower()
+            if len(input_str) == 0:
+                continue
+            elif input_str in dispatcher:
+                return dispatcher[input_str]()
             else:
                 print("Invalid option: " + input_str)
+
+
+    '''
+        save current route network
+    '''
+    def saveRouteNetowk(self):
+        print("\n\n################### Save route network ###################")
+        print("Please enter the file name that you want to save. (Please end with '.json'  eg: data.json)")
+        print("or enter 'back' to go back to main menu")
+        while True:
+            input_str = input(">").strip()
+            if len(input_str) == 0:
+                continue
+            elif input_str.lower() == "back":
+                return self.showMenu()
+            elif len(input_str) <= 5 or input_str[-5:] != ".json":
+                print("Invalid file name: " + input_str + "      \nPlease end the file name with .json.  eg: data.json")
+            else:
+                self.query.graph.saveGraph(input_str) # save the graph
+                print("File: " + input_str + " saved successfully!")
+                return;
+"""

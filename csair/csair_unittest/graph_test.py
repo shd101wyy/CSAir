@@ -23,7 +23,7 @@ class TestGraph(TestCase):
 
     def testConnectNodes(self):
         ## init graph
-        g = Graph("../data/data.json")
+        g = Graph(file_name="../data/data.json")
 
         self.assertEqual(2, len(g.nodes["LIM"].destinations.keys()))
         self.assertEqual(1, len(g.nodes["SCL"].destinations.keys()))
