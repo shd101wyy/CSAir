@@ -27,7 +27,7 @@ class Graph:
             destination = self.nodes[ports[1]]
             source.connect(destination, distance)     # connect source and destination
             # the json file now represents directed graph instead of undirected graph
-            # destination.connect(source, distance)     # connect destination to source as well
+            #  destination.connect(source, distance)     # connect destination to source as well
 
     def generateURL(self):
         """  generate url to visualize the map
