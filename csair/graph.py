@@ -8,15 +8,18 @@ Graph class
 parse JSON File, generate graph
 '''
 class Graph:
-
-    ## generate node according to metros data
     def generateNodes(self, metros):
+        """ generate node according to metros data
+        :param metros: metro information
+        """
         for info in metros:
             node = Node(info) # create Node
             self.nodes[info["code"]] = node # add to node list
 
-    ## build routes by connecting nodes
     def connectNodes(self, routes):
+        """ build routes by connecting nodes
+        :param routes: route information
+        """
         for info in routes:
             distance = info["distance"]     # get distance
             ports = info["ports"]             # get 2 codes of ports
@@ -26,9 +29,10 @@ class Graph:
             # the json file now represents directed graph instead of undirected graph
             # destination.connect(source, distance)     # connect destination to source as well
 
-    ## generate url to visualize the map
     def generateURL(self):
-        # eg: http://www.gcmap.com/mapui?P=LIM-MEX,+LIM-BOG,+MEX-LAX
+        """  generate url to visualize the map
+            # eg: http://www.gcmap.com/mapui?P=LIM-MEX,+LIM-BOG,+MEX-LAX
+        """
         url = "http://www.gcmap.com/mapui?P="
         url_param = ""
         for city_code in self.nodes:
@@ -40,15 +44,17 @@ class Graph:
         url = url + url_param # get url
         return url
 
-    ## Visualize CSAir's route map
     def visualizeCSAirRouteMap(self):
+        """ Visualize CSAir's route map
+            open the browser if necessary
+        """
         webbrowser.open(self.generateURL())
 
-    '''
-        find city by name
-        if no such city is found, return False
-    '''
     def getCityByNameOrCode(self, name_or_code):
+        """ find city object by city name or city code
+            if no such city is found, return False
+        :param name_or_code:
+        """
         name_or_code = name_or_code.lower()
         for city_code in self.nodes:
             city = self.nodes[city_code]
@@ -56,12 +62,17 @@ class Graph:
                 return city
         return False
 
-    '''
+    def removeCity(self, city_name_or_code):
+        """
         remove a city from the graph, given city name or city code
         return True if we find the city to remove
         otherwise return False
-    '''
-    def removeCity(self, city_name_or_code):
+        """
+
+        """
+        :param city_name_or_code:
+        :return:
+        """
         city = self.getCityByNameOrCode(city_name_or_code)
         if city == False:
             return False # didnt find city
@@ -72,14 +83,14 @@ class Graph:
             self.nodes.pop(city.info["code"], None)
             return True # successfully removed city from current graph
 
-
-    '''
-        remove a route
-        given 2 params: source and destination
-        if there is such route, remove it and return True
-        otherwise return false
-    '''
     def removeRoute(self, source_name_or_code, dest_name_or_code):
+        """
+        remove a route
+        if there is such route, remove it and return True
+        otherwise return False
+        :param source_name_or_code: source
+        :param dest_name_or_code:  destination
+        """
         src = self.getCityByNameOrCode(source_name_or_code)
         dest = self.getCityByNameOrCode(dest_name_or_code)
         if src == False or dest == False: # invalid city
@@ -90,13 +101,9 @@ class Graph:
         else:
             return False # no such route
 
-
-
-
-    '''
-        Convert current graph to JSON data format
-    '''
     def convertGraphToJSON(self):
+        """ Convert current graph to JSON data format
+        """
         data = {"metros": [], "routes": []}
         for city_code in self.nodes:
             city = self.nodes[city_code]   # get city
@@ -111,24 +118,25 @@ class Graph:
                 data["routes"].append({"ports": [city_info["code"], dest.info["code"]], "distance": city_destinations[dest]})
         return data
 
-    '''
-        Save the graph to json file
-    '''
     def saveGraph(self, file_name):
+        """ Save the graph to json file given file_name
+        """
         with open("./data/" + file_name, 'w') as outfile:
             json.dump(self.convertGraphToJSON(), outfile, indent=4, sort_keys=True)
 
-    '''
-        Add a city to graph
-    '''
     def addCity(self, info):
+        """ Add a city to graph
+        """
         self.nodes[info["code"]] = Node(info)
 
-    '''
+    def addRoute(self, src_name_or_code, dest_name_or_code, distance):
+        """
         Add a route between two cities
         return True if the route is created; otherwise return False
-    '''
-    def addRoute(self, src_name_or_code, dest_name_or_code, distance):
+        :param src_name_or_code:  source city
+        :param dest_name_or_code:  destination city
+        :param distance:  distance of the route
+        """
         src = self.getCityByNameOrCode(src_name_or_code)
         dest = self.getCityByNameOrCode(dest_name_or_code)
         if src == False or dest == False: # didn't find city
@@ -137,10 +145,9 @@ class Graph:
             src.connect(dest, distance)
             return True
 
-    '''
-        load a json file
-    '''
     def loadJSON(self, file_name):
+        """load a json file
+        """
         try:
             json_file = open("data/" + file_name) # load JSON file
             json_data = json.load(json_file) # parse JSON data
@@ -157,10 +164,12 @@ class Graph:
         except Exception:
             print(Exception)
 
-    ## Constructor: initiate graph
-    ## Load JSON file, parser JSON data
-    ## Generate Graph by JSON data
     def __init__(self, file_name=None, json_data=None):
+        """
+        ## Constructor: initiate graph
+        ## Load JSON file, parser JSON data if necessary
+        ## Generate Graph by JSON data
+        """
         self.nodes = {} # key is code of the port, value is the node
         if file_name == None and json_data == None:
             return
@@ -178,9 +187,16 @@ class Graph:
         self.connectNodes(routes)
 
 
-    ## Dijkstra's Algorithm refered from Wikipedia
-    ## if the src or dest is invalid, return False
+
+
     def shortestPath(self, src, dest):
+        """
+        ## Dijkstra's Algorithm refered from Wikipedia
+        ## Return the shortest path: a list that contains all cities
+        ## if the src or dest is invalid, return False
+        :param src: source city
+        :param dest: destination city
+        """
         src = self.getCityByNameOrCode(src)
         dest = self.getCityByNameOrCode(dest)
         if src == False or dest == False:
@@ -223,13 +239,3 @@ class Graph:
 
 
 
-
-
-
-
-
-
-
-
-
-## x = Graph("./data/data.json")

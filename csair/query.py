@@ -5,24 +5,33 @@ import sys
 Build up the query system
 '''
 class Query():
-    ## Constructor: bind graph
     def __init__(self, graph):
+        """
+        Constructor: bind graph
+                     calculate and get information for route network if necessary.
+        """
         self.graph = graph        #  bind graph
         if self.graph.nodes != {}:
             self.queryAllRouteInfo()
 
-    ## load json file
     def loadJSON(self, file_name):
+        """
+        load json file
+        """
         self.graph.loadJSON(file_name)
         if self.graph.nodes != {}:
             self.queryAllRouteInfo()     #  calculate route info
 
-    ## get a list of all cities that csair flies to
     def getAllCities(self):
+        """
+        get a list of all cities that csair flies to
+        """
         return self.graph.nodes
 
-    ## get longest single flight
     def getLongestSingleFlight(self):
+        """
+        get longest single flight
+        """
         cities = self.graph.nodes # get nodes(port)
         longest_single_flight_distance = -1
         longest_single_flight = -1
@@ -36,8 +45,10 @@ class Query():
                     longest_single_flight = {"from": city, "to": dest, "distance": distance}
         self.longest_single_flight = longest_single_flight
 
-    # get shortest single flight
     def getShortestSingleFlight(self):
+        """
+        get shortest single flight
+        """
         cities = self.graph.nodes # get nodes(port)
         shortest_single_flight_distance = -1
         shortest_single_flight = -1
@@ -51,8 +62,10 @@ class Query():
                     shortest_single_flight = {"from": city, "to": dest, "distance": distance}
         self.shortest_single_flight = shortest_single_flight
 
-    # calculate average distance
     def getAverageDistance(self):
+        """
+        calculate average distance
+        """
         cities = self.graph.nodes # get nodes(port)
         total_distance = 0
         route_num = 0
@@ -65,8 +78,10 @@ class Query():
                 route_num += 1                      # increase route num
         self.average_distance = total_distance / route_num  # calculate average distance
 
-    # get biggest city
     def getBiggestCity(self):
+        """
+        get biggest city
+        """
         cities = self.graph.nodes # get nodes(port)
         biggest_city_population = -1
         biggest_city = -1
@@ -79,8 +94,10 @@ class Query():
                 biggest_city = city
         self.biggest_city = biggest_city
 
-    # get smallest city
     def getSmallestCity(self):
+        """
+        get smallest city
+        """
         cities = self.graph.nodes # get nodes(port)
         smallest_city_population = -1
         smallest_city = -1
@@ -93,8 +110,10 @@ class Query():
                 smallest_city = city
         self.smallest_city = smallest_city
 
-    # get average size of city
     def getAverageSizeOfCity(self):
+        """
+        get average size of city
+        """
         cities = self.graph.nodes # get nodes(port)
         total_population = 0
         cities_num = 0
@@ -107,8 +126,10 @@ class Query():
             cities_num += 1
         self.average_population = total_population / cities_num
 
-    # get a list of continents
     def getContinentsInformation(self):
+        """
+        get a list of continents
+        """
         cities = self.graph.nodes # get nodes(port)
         continents = {}  # its key is continent name
         for code in cities:
@@ -122,8 +143,10 @@ class Query():
                 continents[continent] = [city]
         self.continents = continents
 
-    # get hub cities
     def getHubCities(self):
+        """
+        get hub cities
+        """
         cities = self.graph.nodes # get nodes (port)
         cities_and_their_num_of_outbound_flights = []
         for code in cities:
@@ -140,12 +163,16 @@ class Query():
             self.hub_cities.append(cities_and_their_num_of_outbound_flights[i][1])
             i += 1
 
-    # calculate layover time
     def calculateLayoverTime(self, outbound_flights_num):
+        """
+        calculate layover time
+        """
         return 2 - (1/6) * (outbound_flights_num - 1)
 
-    # calculate flying time
     def calculateFlyingTime(self, distance):
+        """
+        calculate flying time
+        """
         a = (750 - 0) / (400 / 750)
         if distance <= 400:
             half_distance = distance / 2
@@ -157,9 +184,11 @@ class Query():
             t += (distance - 400)/750 # cruising
         return t
 
-    # query information about the route among many cities
-    # return False if the route is invalid
     def queryRouteInfo(self, list_of_cities):
+        """
+        query information about the route among many cities
+        return False if the route is invalid
+        """
         total_distance = 0
         total_cost = 0
         total_time = 0
@@ -198,9 +227,10 @@ class Query():
                 "total_time": total_time}
 
 
-
-    # query all required information
     def queryAllRouteInfo(self):
+        """
+        query all required information for the route network
+        """
         self.getLongestSingleFlight()
         self.getShortestSingleFlight()
         self.getAverageDistance()

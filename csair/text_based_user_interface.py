@@ -9,9 +9,15 @@ Build up the text based user interface.
 '''
 class TextBasedUserInterface(cmd.Cmd):
     def __init__(self, graph):
+        """
+        Constructor: initialize text based user interface
+        set prompt for cmd
+        set introduction for cmd
+        initialize query
+        """
         cmd.Cmd.__init__(self)
         self.prompt = "CSAir > "
-        self.intro = "Hi there! Welcome to use CSAir information query system\nPlease use 'load_json_files' commands to load JSON data file first\ntype 'help' to check documented commands"
+        self.intro = "Hi there! Welcome to use CSAir information query system\nPlease use 'load' commands to load JSON data file first\ntype 'help' to check documented commands"
         self.query = Query(graph)
 
     def do_EOF(self, line):
@@ -369,7 +375,7 @@ class TextBasedUserInterface(cmd.Cmd):
                     city.info[key] = self.getUserInputForCity(key) # update property value
                     if key == "code":            # because here I changed code value, I also need to update the graph
                         self.query.graph.nodes["code"] = city
-                        del dict[old_code_value]
+                        self.query.graph.nodes.pop(old_code_value, None)
                     print("\nUpdated:")
                     print(city.info)
                 else:

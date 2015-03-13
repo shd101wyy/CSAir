@@ -4,10 +4,12 @@
 Define Node class
 '''
 class Node():
-    # Constructor for Node class
-    # save necessary information: code, name, countrym continent, timezone, coordinate, population, region
     def __init__(self,
                  info):
+        """
+        Constructor for Node class
+        save necessary information: code, name, countrym continent, timezone, coordinate, population, region
+        """
 
         # Store several information for that place
         self.info = info
@@ -15,12 +17,16 @@ class Node():
         # Flight goes from "self" to destinations
         self.destinations = {}   # key is destination, value is distance
 
-    # Connect self to that destination to create an edge.
     def connect(self, dest, distance):
+        """
+        Connect self to that destination to create an edge.
+        """
         self.destinations[dest] = distance
 
-    # Disconnect two ports
     def disconnect(self, dest):
+        """
+        Disconnect two ports
+        """
         if dest in self.destinations:
             self.destinations.pop(dest, None)
 
