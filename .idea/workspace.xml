@@ -34,8 +34,8 @@
       <file leaf-file-name="graph.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/csair/graph.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2297" max-vertical-offset="2835">
-              <caret line="147" column="0" selection-start-line="147" selection-start-column="0" selection-end-line="147" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="2596" max-vertical-offset="3600">
+              <caret line="184" column="45" selection-start-line="184" selection-start-column="45" selection-end-line="184" selection-end-column="45" />
               <folding>
                 <element signature="e#24#35#0" expanded="true" />
               </folding>
@@ -46,7 +46,7 @@
       <file leaf-file-name="new_data.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/csair/data/new_data.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.5294118" vertical-offset="0" max-vertical-offset="29265">
+            <state vertical-scroll-proportion="104.411766" vertical-offset="5505" max-vertical-offset="29265">
               <caret line="12" column="24" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
               <folding />
             </state>
@@ -67,7 +67,7 @@
         <entry file="file://$PROJECT_DIR$/csair/node.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="480">
-              <caret line="22" column="18" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="18" />
+              <caret line="22" column="31" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -76,8 +76,8 @@
       <file leaf-file-name="query.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/csair/query.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.6296296" vertical-offset="2260" max-vertical-offset="3150">
-              <caret line="160" column="22" selection-start-line="160" selection-start-column="8" selection-end-line="160" selection-end-column="22" />
+            <state vertical-scroll-proportion="-7.962963" vertical-offset="2395" max-vertical-offset="3240">
+              <caret line="175" column="40" selection-start-line="175" selection-start-column="40" selection-end-line="175" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -98,8 +98,8 @@
       <file leaf-file-name="text_based_user_interface.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/csair/text_based_user_interface.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.47945204" vertical-offset="1765" max-vertical-offset="6000">
-              <caret line="134" column="47" selection-start-line="134" selection-start-column="47" selection-end-line="134" selection-end-column="47" />
+            <state vertical-scroll-proportion="0.5088063" vertical-offset="5740" max-vertical-offset="6495">
+              <caret line="400" column="38" selection-start-line="400" selection-start-column="38" selection-end-line="400" selection-end-column="38" />
               <folding>
                 <element signature="e#48#58#0" expanded="true" />
               </folding>
@@ -128,16 +128,16 @@
         <option value="$PROJECT_DIR$/main/graph.py" />
         <option value="$PROJECT_DIR$/csair/data/main.py" />
         <option value="$PROJECT_DIR$/csair/csair.py" />
-        <option value="$PROJECT_DIR$/csair/node.py" />
         <option value="$PROJECT_DIR$/csair_unittest/node_test.py" />
         <option value="$PROJECT_DIR$/csair_unittest/graph_test.py" />
         <option value="$PROJECT_DIR$/csair/README.md" />
         <option value="$PROJECT_DIR$/csair/csair_unittest/query_test.py" />
-        <option value="$PROJECT_DIR$/csair/graph.py" />
         <option value="$PROJECT_DIR$/csair/csair_unittest/graph_test.py" />
         <option value="$PROJECT_DIR$/csair/main.py" />
-        <option value="$PROJECT_DIR$/csair/query.py" />
         <option value="$PROJECT_DIR$/csair/data/data.json" />
+        <option value="$PROJECT_DIR$/csair/node.py" />
+        <option value="$PROJECT_DIR$/csair/graph.py" />
+        <option value="$PROJECT_DIR$/csair/query.py" />
         <option value="$PROJECT_DIR$/csair/text_based_user_interface.py" />
       </list>
     </option>
@@ -740,14 +740,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/csair/node.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="480">
-          <caret line="22" column="18" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/local/Cellar/python3/3.4.3/Frameworks/Python.framework/Versions/3.4/lib/python3.4/cmd.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1876" max-vertical-offset="6105">
@@ -764,24 +756,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/csair/graph.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1997" max-vertical-offset="2835">
-          <caret line="147" column="0" selection-start-line="147" selection-start-column="0" selection-end-line="147" selection-end-column="0" />
-          <folding>
-            <element signature="e#24#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/csair/data/new_data.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.5294118" vertical-offset="0" max-vertical-offset="29265">
-          <caret line="12" column="24" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/csair/main.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="240">
@@ -789,14 +763,6 @@
           <folding>
             <element signature="e#24#47#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/csair/query.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.6296296" vertical-offset="2260" max-vertical-offset="3150">
-          <caret line="160" column="22" selection-start-line="160" selection-start-column="8" selection-end-line="160" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -808,10 +774,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/csair/node.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="480">
+          <caret line="22" column="31" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/csair/data/new_data.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="104.411766" vertical-offset="5505" max-vertical-offset="29265">
+          <caret line="12" column="24" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/csair/graph.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2596" max-vertical-offset="3600">
+          <caret line="184" column="45" selection-start-line="184" selection-start-column="45" selection-end-line="184" selection-end-column="45" />
+          <folding>
+            <element signature="e#24#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/csair/query.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.962963" vertical-offset="2395" max-vertical-offset="3240">
+          <caret line="175" column="40" selection-start-line="175" selection-start-column="40" selection-end-line="175" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/csair/text_based_user_interface.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.47945204" vertical-offset="1765" max-vertical-offset="6000">
-          <caret line="134" column="47" selection-start-line="134" selection-start-column="47" selection-end-line="134" selection-end-column="47" />
+        <state vertical-scroll-proportion="0.5088063" vertical-offset="5740" max-vertical-offset="6495">
+          <caret line="400" column="38" selection-start-line="400" selection-start-column="38" selection-end-line="400" selection-end-column="38" />
           <folding>
             <element signature="e#48#58#0" expanded="true" />
           </folding>

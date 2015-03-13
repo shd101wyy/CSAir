@@ -178,6 +178,57 @@ class Graph:
         self.connectNodes(routes)
 
 
+    ## Dijkstra's Algorithm refered from Wikipedia
+    ## if the src or dest is invalid, return False
+    def shortestPath(self, src, dest):
+        src = self.getCityByNameOrCode(src)
+        dest = self.getCityByNameOrCode(dest)
+        if src == False or dest == False:
+            return False
+        dist = {}
+        prev = {}
+        unvisited_nodes = {}
+
+        dist[src] = 0
+        prev[src] = None
+        unvisited_nodes[src] = True
+
+        for code in self.nodes:   # initialization
+            city = self.nodes[code]
+            if city != src:
+                dist[city] = float("inf")
+                prev[city] = None
+            unvisited_nodes[city] = True
+
+        while len(unvisited_nodes.keys()) != 0:
+            smallest = None
+            for n in unvisited_nodes:
+                if smallest == None or dist[n] < dist[smallest]:
+                    smallest = n
+            u = smallest # get vertex that has smallest dist
+            unvisited_nodes.pop(u, None) # remove u from unvisited nodes
+
+            if u == dest: # find destination
+                output = []
+                while u != None:
+                    output = [u] + output
+                    u = prev[u]
+                return output
+
+            for v in u.destinations:
+                alt = dist[u] + u.destinations[v]
+                if alt < dist[v]:
+                    dist[v] = alt
+                    prev[v] = u
+
+
+
+
+
+
+
+
+
 
 
 

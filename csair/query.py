@@ -14,7 +14,8 @@ class Query():
     ## load json file
     def loadJSON(self, file_name):
         self.graph.loadJSON(file_name)
-        self.queryAllRouteInfo()     #  calculate route info
+        if self.graph.nodes != {}:
+            self.queryAllRouteInfo()     #  calculate route info
 
     ## get a list of all cities that csair flies to
     def getAllCities(self):
@@ -159,15 +160,20 @@ class Query():
     # query information about the route among many cities
     # return False if the route is invalid
     def queryRouteInfo(self, list_of_cities):
-        print(list_of_cities)
         total_distance = 0
         total_cost = 0
         total_time = 0
         cost_per_km = 0.35
         i = 0
         while i < len(list_of_cities) - 1:
-            src = self.graph.getCityByNameOrCode(list_of_cities[0].strip())
-            dest = self.graph.getCityByNameOrCode(list_of_cities[1].strip())
+            if type(list_of_cities[0]) == str:
+                src = self.graph.getCityByNameOrCode(list_of_cities[0].strip())
+            else:
+                src = list_of_cities[0]
+            if type(list_of_cities[1]) == str:
+                dest = self.graph.getCityByNameOrCode(list_of_cities[1].strip())
+            else:
+                dest = list_of_cities[1]
             if src == False or dest == False: # invalid src or dest
                 return False
             if not (dest in src.destinations): # not connected

@@ -376,6 +376,39 @@ class TextBasedUserInterface(cmd.Cmd):
                     continue
             except Exception:
                 continue
+    def do_shortest_path(self, line):
+        """
+            Get shortest Path between two cities
+            usage:
+                shortest_path [city1] [city2]
+            eg:
+                shortest_path Beijing Tokyo
+                shortest_path LAX  Sydney
+        """
+        cities = line.split(" ")
+        if len(cities) != 2:
+            self.do_help("shortest")
+            return
+        result = self.query.graph.shortestPath(cities[0], cities[1])
+        if result != False:
+            route_info =  self.query.queryRouteInfo(result)
+            if route_info != False:
+                i = 1
+                route_str = result[0].info["name"] + "("+result[0].info["code"] + ")"
+                while i < len(result):
+                    route_str += (" -> " + result[i].info["name"] + "(" + result[i].info["code"] + ")")
+                    i += 1
+                print("Route:         " + route_str)
+                print("Total Distance: " + str(route_info["total_distance"]))
+                print("Total Cost: " + str(route_info["total_cost"]))
+                print("Total Time: " + str(route_info["total_time"])[0: 3] + " hours")
+            else:
+                print("Invalid route: " + line)
+            return
+        else:
+            print("Invalid inputs: ")
+            print(line)
+
 
     def do_save(self, line):
         """
