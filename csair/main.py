@@ -8,4 +8,4 @@ graph = Graph("./data/data.json")
 prog = TextBasedUserInterface(graph)
 prog.showMenu()
 while(True):
-    prog.processQuery()
+    prog.showMenu()

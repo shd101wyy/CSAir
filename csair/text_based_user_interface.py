@@ -13,6 +13,27 @@ class TextBasedUserInterface():
         self.chosen_city = ""     #  city that is chosen
         self.city_list = []       # clear city list
 
+    ## Show Menu
+    def showMenu(self):
+        self.status = "show_menu"
+        print("\n\n################### Main Menu ###################")
+        print("Enter 'quit' to quit the query.")
+        print("Please enter the number '1' ~ '3' to choose a search option.")
+        print("1, Cities information")
+        print("2, Route information")
+        print("3, Visualize CSAir's route map")
+
+        dispatcher = {
+            "1": self.listAllCities,                       # list all cities that CSAir flies to
+            "2": self.showRouteNetworkInfo,              # show route network info
+            "3": self.query.graph.visualizeCSAirRouteMap   # Visualize  CSAir's route map
+        }
+        while True: # read user prompt
+            input_str = input("> ").strip()
+            if input_str in dispatcher:
+                return dispatcher[input_str]()
+            else:
+                print("Invalid option: " + input_str)
 
     ## List names of all ports that CSAir flies to
     def listAllCities(self):
@@ -33,21 +54,24 @@ class TextBasedUserInterface():
         possible_options_string = "Please enter the number '1'"
         if count - 1 > 1:
             possible_options_string += " ~ '" + str(count - 1) + "'"
-        possible_options_string += " to get information of that city."
+        possible_options_string += " or City Name or City code to get information of that city."
         if count != 1:
             print(possible_options_string)
 
-    ## Show Menu
-    def showMenu(self):
-        self.status = "show_menu"
-        print("\n\n################### Main Menu ###################")
-        print("Enter 'quit' to quit the query.")
-        print("Please enter the number '1' ~ '3' to choose a search option.")
-        print("1, Cities information")
-        print("2, Route information")
-        print("3, Visualize CSAir's route map")
-
-
+        while True: # read user prompt
+            input_str = input(">").strip()
+            if input_str.lower() == "back": # go back to main menu
+                return self.showMenu()
+            elif len(input_str) > 0 and input_str.isdigit() and int(input_str) >= 1 and int(input_str) <= len(self.city_list):        # get city info
+                self.chosen_city = self.city_list[int(input_str) - 1] # set chosen city
+                return self.showCityInfo()
+            else: # check whether user entered valid city name or
+                for city in self.city_list:
+                    city_info = city.info
+                    if city_info["code"] == input_str.upper() or city_info["name"].upper() == input_str.upper():
+                        self.chosen_city = city
+                        return self.showCityInfo()
+                print("Invalid option: " + input_str)
 
     ## Show City information
     '''
@@ -109,9 +133,24 @@ class TextBasedUserInterface():
         possible_options_string = "Please enter the number '1'"
         if count - 1 > 1:
             possible_options_string += " ~ '" + str(count - 1) + "'"
-        possible_options_string += " to get information of that destination city."
+        possible_options_string += " or City Name or City code to get information of that destination city."
         if count != 1:
             print(possible_options_string)
+
+        while True: # read user prompt
+            input_str = input(">").strip()
+            if input_str.lower() == "back":
+                return self.listAllCities()
+            elif len(input_str) > 0 and input_str.isdigit() and int(input_str) >= 1 and int(input_str) <= len(self.city_list):        # get city info
+                self.chosen_city = self.city_list[int(input_str) - 1] # set chosen city
+                return self.showCityInfo()
+            else: # check whether user entered valid city name or
+                for city in self.city_list:
+                    city_info = city.info
+                    if city_info["code"] == input_str.upper() or city_info["name"].upper() == input_str.upper():
+                        self.chosen_city = city
+                        return self.showCityInfo()
+                print("Invalid option: " + input_str)
 
     ## Show route network info
     def showRouteNetworkInfo(self):
@@ -141,7 +180,7 @@ class TextBasedUserInterface():
 
         # smallest city served by CSAir
         print("\n* The smallest city (by population) served by CSAir: ")
-        # print("      code:       " + smallest_city.info["code"])
+        print("      code:       " + self.query.smallest_city.info["code"])
         print("      name:       " + self.query.smallest_city.info["name"])
         print("      population: " + str(self.query.smallest_city.info["population"]))
 
@@ -161,55 +200,19 @@ class TextBasedUserInterface():
 
         # a list of the continents served by CSAir and which cities are in them
         print("\n* CSAir's hub cities - the cities that have the most direct connections:")
-        hub_cites = self.query.hub_cites
+        hub_cities = self.query.hub_cities
         max_num_of_outbound_flights = self.query.max_num_of_outbound_flights
         i = 0
-        while i < len(hub_cites):
-            print("      name:       " + hub_cites[i].info["name"])
+        while i < len(hub_cities):
+            print("      name:       " + hub_cities[i].info["name"])
             i += 1
-        print("      max outbound flights num:     " + str(max_num_of_outbound_flights))
+        print("      max flights num:     " + str(max_num_of_outbound_flights))
 
         print("\n\nEnter 'back' to go back to main menu.")
 
-
-    ## Process the query
-    def processQuery(self):
-        input_str = input("> ").strip()
-        try:
-            ## under main menu
-            if self.status == "show_menu":
-                if input_str == "1":                                                       # list all cities that CSAir flies to
-                    self.listAllCities()
-                elif input_str == "2":                                                     # show route network info
-                    self.showRouteNetworkInfo()
-                elif input_str == "3":                                                     # Visualize  CSAir's route map
-                    self.query.graph.visualizeCSAirRouteMap()
-                elif input_str == "quit":                                                  # quit query
-                    sys.exit(0)
-                else:
-                    print("Invalid option: " + input_str)
-            ## under city list
-            elif self.status == "list_cities_CSAir_flies_to":
-                if input_str == "back":                                                    # go back to main menu
-                    self.showMenu()
-                elif len(input_str) > 0 and int(input_str) >= 1 and int(input_str) <= len(self.city_list):        # get city info
-                    self.chosen_city = self.city_list[int(input_str) - 1] # set chosen city
-                    self.showCityInfo()
-                else:
-                    print("Invalid option: " + input_str)
-            ## under city info
-            elif self.status == "list_city_information":
-                if input_str == "back":                                                    # go back to city list
-                    self.listAllCities()
-                elif len(input_str) > 0 and int(input_str) >= 1 and int(input_str) <= len(self.city_list):        # get city info
-                    self.chosen_city = self.city_list[int(input_str) - 1] # set chosen city
-                    self.showCityInfo()
-                else:
-                    print("Invalid option: " + input_str)
-            elif self.status == "show_route_network_information":
-                if input_str == "back":                                                    # go back to main menu
-                    self.showMenu()
-                else:
-                    print("Invalid option: " + input_str)
-        except Exception:
-            print("Invalid option: " + input_str)
+        while True: # read user prompt
+            input_str = input(">").strip()
+            if input_str == "back":
+                return self.showMenu()
+            else:
+                print("Invalid option: " + input_str)

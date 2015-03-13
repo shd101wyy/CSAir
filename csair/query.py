@@ -14,86 +14,132 @@ class Query():
     def getAllCities(self):
         return self.graph.nodes
 
-
-    ## query route info
-    def queryRouteInfo(self):
+    ## get longest single flight
+    def getLongestSingleFlight(self):
         cities = self.graph.nodes # get nodes(port)
         longest_single_flight_distance = -1
         longest_single_flight = -1
-        shortest_single_flight_distance = -1
-        shortest_single_flight = -1
-        total_distance = 0
-        biggest_city_population = -1
-        biggest_city = -1
-        smallest_city_population = -1
-        smallest_city = -1
-        total_population = 0
-        cities_num = 0
-        continents = {}     # its key is continent name
-        route_num = 0
-        cities_and_their_num_of_outbound_flights = []
-        biggest_connection_num = -1;
-        biggest_connection_city = -1;
         for code in cities:
             city = cities[code]
-            city_info = city.info                  # get city info
-            city_destionatiosn = city.destinations # get city destinations
-            ## check flying distance
-            for dest in city_destionatiosn:
-                distance = city_destionatiosn[dest]
-                ## get longest single flight in the network
+            city_destinations = city.destinations # get city destinations
+            for dest in city_destinations:
+                distance = city_destinations[dest]
                 if longest_single_flight_distance == -1 or longest_single_flight_distance < distance:
                     longest_single_flight_distance = distance
                     longest_single_flight = {"from": city, "to": dest, "distance": distance}
+        self.longest_single_flight = longest_single_flight
 
-                ## get shortest single flight in the network
+    # get shortest single flight
+    def getShortestSingleFlight(self):
+        cities = self.graph.nodes # get nodes(port)
+        shortest_single_flight_distance = -1
+        shortest_single_flight = -1
+        for code in cities:
+            city = cities[code]
+            city_destinations = city.destinations # get city destinations
+            for dest in city_destinations:
+                distance = city_destinations[dest]
                 if shortest_single_flight_distance == -1 or shortest_single_flight_distance > distance:
                     shortest_single_flight_distance = distance
                     shortest_single_flight = {"from": city, "to": dest, "distance": distance}
+        self.shortest_single_flight = shortest_single_flight
 
-                ## increase total distance
-                total_distance += distance
+    # calculate average distance
+    def getAverageDistance(self):
+        cities = self.graph.nodes # get nodes(port)
+        total_distance = 0
+        route_num = 0
+        for code in cities:
+            city = cities[code]
+            city_destinations = city.destinations
+            for dest in city_destinations:
+                distance = city_destinations[dest]
+                total_distance += distance          # increase total distance
+                route_num += 1                      # increase route num
+        self.average_distance = total_distance / route_num  # calculate average distance
 
-                ## increase total number of route
-                route_num += 1
-            cities_and_their_num_of_outbound_flights.append((len(city_destionatiosn.keys()), city))
-
-            ## get biggest_city
+    # get biggest city
+    def getBiggestCity(self):
+        cities = self.graph.nodes # get nodes(port)
+        biggest_city_population = -1
+        biggest_city = -1
+        for code in cities:
+            city = cities[code]
+            city_info = city.info
+            # get biggest city
             if biggest_city_population == -1 or biggest_city_population < city_info["population"]:
                 biggest_city_population = city_info["population"]
                 biggest_city = city
+        self.biggest_city = biggest_city
 
-            ## get smallest city
+    # get smallest city
+    def getSmallestCity(self):
+        cities = self.graph.nodes # get nodes(port)
+        smallest_city_population = -1
+        smallest_city = -1
+        for code in cities:
+            city = cities[code]
+            city_info = city.info
+            # get smallest city
             if smallest_city_population == -1 or smallest_city_population > city_info["population"]:
                 smallest_city_population = city_info["population"]
                 smallest_city = city
+        self.smallest_city = smallest_city
 
-            ## increase total population
+    # get average size of city
+    def getAverageSizeOfCity(self):
+        cities = self.graph.nodes # get nodes(port)
+        total_population = 0
+        cities_num = 0
+        for code in cities:
+            city = cities[code]
+            city_info = city.info
+            # increase total number of population
             total_population += city_info["population"]
+            # increase total number of cities
+            cities_num += 1
+        self.average_population = total_population / cities_num
 
+    # get a list of continents
+    def getContinentsInformation(self):
+        cities = self.graph.nodes # get nodes(port)
+        continents = {}  # its key is continent name
+        for code in cities:
+            city = cities[code]
+            city_info = city.info
             ## set to continents
             continent = city_info["continent"]
             if continent in continents:
                 continents[continent].append(city)
             else:
                 continents[continent] = [city]
+        self.continents = continents
 
-            ## increase total number of cities
-            cities_num += 1
+    # get hub cities
+    def getHubCities(self):
+        cities = self.graph.nodes # get nodes (port)
+        cities_and_their_num_of_outbound_flights = []
+        for code in cities:
+            city = cities[code]
+            city_destinations = city.destinations
+            cities_and_their_num_of_outbound_flights.append((len(city_destinations.keys()), city))
 
-        ## process route info
-        self.longest_single_flight = longest_single_flight          # set longest single flight
-        self.shortest_single_flight = shortest_single_flight        # set shortest single flight
-        self.average_distance = total_distance / route_num          # calculate average distance
-        self.biggest_city = biggest_city                            # set biggest city
-        self.smallest_city = smallest_city                          # set smallest city
-        self.average_population = total_population / cities_num     # calculate average population
-        self.continents = continents                                # set continents
+        # sort by number of outbound flights
         cities_and_their_num_of_outbound_flights = sorted(cities_and_their_num_of_outbound_flights, key=lambda t:t[0], reverse=True)
-        self.hub_cites = []                                         # get hub cities
-        max_num_of_outbound_flights = cities_and_their_num_of_outbound_flights[0][0]
-        self.max_num_of_outbound_flights = max_num_of_outbound_flights
+        self.max_num_of_outbound_flights = cities_and_their_num_of_outbound_flights[0][0]
+        self.hub_cities = []
         i = 0
-        while i < len(cities_and_their_num_of_outbound_flights) and cities_and_their_num_of_outbound_flights[i][0] == max_num_of_outbound_flights:
-            self.hub_cites.append(cities_and_their_num_of_outbound_flights[i][1])
+        while i < len(cities_and_their_num_of_outbound_flights) and cities_and_their_num_of_outbound_flights[i][0] == self.max_num_of_outbound_flights:
+            self.hub_cities.append(cities_and_their_num_of_outbound_flights[i][1])
             i += 1
+
+    # query all required information
+    def queryRouteInfo(self):
+        self.getLongestSingleFlight()
+        self.getShortestSingleFlight()
+        self.getAverageDistance()
+        self.getBiggestCity()
+        self.getSmallestCity()
+        self.getAverageSizeOfCity()
+        self.getContinentsInformation()
+        self.getHubCities()

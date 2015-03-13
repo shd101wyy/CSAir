@@ -23,6 +23,7 @@ class Graph:
             source = self.nodes[ports[0]]
             destination = self.nodes[ports[1]]
             source.connect(destination, distance)     # connect source and destination
+            destination.connect(source, distance)     # connect destination to source as well
 
     ## generate url to visualize the map
     def generateURL(self):

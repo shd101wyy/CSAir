@@ -62,4 +62,4 @@ class TestGraph(TestCase):
                 ]
         })
 
-        self.assertEqual("http://www.gcmap.com/mapui?P=SCL-LIM", g.generateURL())
+        self.assertEqual("http://www.gcmap.com/mapui?P=LIM-SCL,+SCL-LIM", g.generateURL())
