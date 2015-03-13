@@ -25,15 +25,18 @@ class TextBasedUserInterface(cmd.Cmd):
         for file in files:
             print(file)
 
-    def do_load_json_files(self, line):
+    def do_load(self, line):
         """
             Load JSON files
-            load_json_files file1.json file2.json ...
+            load file1.json file2.json ...
 
             eg:
-                load_json_files data.json
-                load_json_files old.json new.json
+                load data.json
+                load old.json new.json
         """
+        if len(line) == 0:
+            self.do_help("load")
+            return
         files = line.split(" ")
         for file_name in files:
             self.query.loadJSON(file_name)
@@ -192,7 +195,8 @@ class TextBasedUserInterface(cmd.Cmd):
                 remove_city TKO
         """
         if len(line) == 0:
-                return
+            self.do_help("remove_city")
+            return
         if self.query.graph.removeCity(line):
             print("City: " + line + " removed successfully")
         else:
@@ -209,6 +213,7 @@ class TextBasedUserInterface(cmd.Cmd):
                 remove_route SHA      TPE
         """
         if len(line) == 0:
+            self.do_help("remove_route")
             return
         source_dest = line.split(" ")
         if len(source_dest) == 2:
@@ -235,6 +240,23 @@ class TextBasedUserInterface(cmd.Cmd):
                 except Exception:
                     print("Invalid coordinates: " + input_str)
 
+    ## get user input value for some city properties like code, name, etc
+    def getUserInputForCity(self, city_info_key):
+        if city_info_key == "coordinates":
+            return self.getUserInputCoordinates()
+        while True:
+            input_str = input("Please enter the " + city_info_key + ":").strip()
+            if len(input_str) == 0:
+                continue
+            if city_info_key == "population" or city_info_key == "region" or city_info_key == "timezone":
+                if (input_str[0] == "-" and input_str[1:].isdigit()) or input_str.isdigit():
+                    input_str = int(input_str)
+                else:
+                    print("Invalid input for " + city_info_key + ", which required Integer")
+                    continue
+            return input_str
+
+
     def do_add_city(self, line):
         """
             Add a new city to database
@@ -244,22 +266,7 @@ class TextBasedUserInterface(cmd.Cmd):
         info_list = ["code", "name", "country", "continent", "timezone", "coordinates", "population", "region"]
         info = {}
         for key in info_list:
-            while True:
-                if key == "coordinates":
-                    input_str = self.getUserInputCoordinates()
-                else:
-                    input_str = input("please enter " + key + ": ").strip()
-                if len(input_str) == 0:
-                    continue
-                else:
-                    if key == "population" or key == "region" or key == "timezone":
-                        try:
-                            input_str = int(input_str)
-                        except Exception:
-                            print("Invalid input for " + key + ", which required Integer")
-                            continue
-                    info[key] = input_str
-                    break
+            info[key] = self.getUserInputForCity(key)
         self.query.graph.addCity(info) # add city to the graph
         print("City created successfully")
         print(info)
@@ -274,6 +281,7 @@ class TextBasedUserInterface(cmd.Cmd):
                 add_route PEK TYO 100    will connect Beijing to Tokyo with distance 100
         """
         if len(line) == 0:
+            self.do_help("add_route")
             return
         source_dest_distance = line.split(" ")
         if len(source_dest_distance) == 3:
@@ -288,82 +296,86 @@ class TextBasedUserInterface(cmd.Cmd):
 
         print("Invalid Route: " + line)
 
-    """
-
-    '''
-        edit existing city
-    '''
-    def editExistingCity(self):
-        print("\n\n################### edit existing city ###################")
-        while True:
-            input_str = input("Please enter the city name or city code: ").strip().lower()
-            if len(input_str) == 0:
-                continue
-            city = self.query.graph.getCityByNameOrCode(input_str)
-            if city != False:
-                break
-            else:
-                print("Couldn't find city: " + input_str)
+    def do_quit(self, line):
+        """
+            quit the query program
+        """
+        sys.exit(0)
 
 
+    def do_edit_city(self, line):
+        """
+            edit city information
+            usage:
+                edit_city [city_code]
+            eg:
+                edit_city LAX
+        """
+        if len(line) == 0:
+            return
+        city = self.query.graph.getCityByNameOrCode(line)
+        if city == False:
+            print("Cannot find city: " + line + " from database")
 
-    '''
-         online editing of route information
-         1. Remove a city
-         2. Remove a route
-         3. Add a city, including all its necessary information
-         4. Add a route, including all its necessary information
-         5. Edit existing city
-    '''
-    def editRouteNetwork(self):
-        print("\n\n################### Online editing of route information ###################")
-        # self.printCities()
+        print("\nCurrent city info:")
+        print(city.info)
+        print("Please enter the following option to edit the city:")
+        print("back  -            go back to query system")
+        print("1     -            edit code")
+        print("2     -            edit name")
+        print("3     -            edit country")
+        print("4     -            edit continent")
+        print("5     -            edit timezone")
+        print("6     -            edit coordinates")
+        print("7     -            edit population")
+        print("8     -            edit region")
 
-        ## show options
-        print("\n\nPlease choose an option: ")
-        print("back -  Go back to main menu")
-        print("1    -  Remove a city")
-        print("2    -  Remove a route")
-        print("3    -  Add a city")
-        print("4    -  Add a route")
-        print("5    -  Edit existing city")
-
-        dispatcher = {
-            "1": self.removeCity,
-            "2": self.removeRoute,
-            "3": self.addCity,
-            "4": self.addRoute,
-            "5": self.editExistingCity,
-            "back": self.showMenu
+        key_dict = {
+            "1": "code",
+            "2": "name",
+            "3": "country",
+            "4": "continent",
+            "5": "timezone",
+            "6": "coordinates",
+            "7": "population",
+            "8": "region"
         }
 
         while True:
-            input_str = input(">").strip().lower()
+            input_str = input("edit city > ").strip();
             if len(input_str) == 0:
                 continue
-            elif input_str in dispatcher:
-                return dispatcher[input_str]()
-            else:
-                print("Invalid option: " + input_str)
-
-
-    '''
-        save current route network
-    '''
-    def saveRouteNetowk(self):
-        print("\n\n################### Save route network ###################")
-        print("Please enter the file name that you want to save. (Please end with '.json'  eg: data.json)")
-        print("or enter 'back' to go back to main menu")
-        while True:
-            input_str = input(">").strip()
-            if len(input_str) == 0:
+            elif input_str == "back":
+                return
+            try:
+                if input_str in key_dict:
+                    key = key_dict[input_str]
+                    if key == "code":
+                        old_code_value = city.info["code"]   # save old code value
+                    city.info[key] = self.getUserInputForCity(key) # update property value
+                    if key == "code":            # because here I changed code value, I also need to update the graph
+                        self.query.graph.nodes["code"] = city
+                        del dict[old_code_value]
+                    print("\nUpdated:")
+                    print(city.info)
+                else:
+                    continue
+            except Exception:
                 continue
-            elif input_str.lower() == "back":
-                return self.showMenu()
-            elif len(input_str) <= 5 or input_str[-5:] != ".json":
-                print("Invalid file name: " + input_str + "      \nPlease end the file name with .json.  eg: data.json")
-            else:
-                self.query.graph.saveGraph(input_str) # save the graph
-                print("File: " + input_str + " saved successfully!")
-                return;
-"""
+
+    def do_save(self, line):
+        """
+            Save current route network
+            usage:
+                save [json_file_name]
+            eg:
+                save my_data.json
+        """
+        if len(line) == 0:
+            self.do_help("save")
+            return;
+        if len(line) <= 5 or line[-5:] != ".json":
+            print("Invalid file name: " + line + "      \nPlease end the file name with .json.  eg: data.json")
+            return
+        self.query.graph.saveGraph(line) # save the graph
+        print("File: " + line + " saved successfully!")

@@ -1,0 +1,39 @@
+{
+    "metros": [
+        {
+            "code": "NDA",
+            "continent": "Asia",
+            "coordinates": {
+                "S": 5,
+                "W": 10
+            },
+            "country": "China",
+            "name": "Shanghai",
+            "population": 10,
+            "region": -2,
+            "timezone": -14
+        },
+        {
+            "code": "ABS",
+            "continent": "Asia",
+            "coordinates": {
+                "S": 10,
+                "W": 23
+            },
+            "country": "China",
+            "name": "Beijing",
+            "population": 12,
+            "region": -3,
+            "timezone": -12
+        }
+    ],
+    "routes": [
+        {
+            "distance": 10,
+            "ports": [
+                "ABS",
+                "NDA"
+            ]
+        }
+    ]
+}
