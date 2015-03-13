@@ -77,9 +77,12 @@ class Graph:
         if city == False:
             return False # didnt find city
         else:
-            destinations = city.destinations
-            for dest in destinations:
-                dest.disconnect(city)  # disconnect
+            #destinations = city.destinations
+            #for dest in destinations:
+            #    dest.disconnect(city)  # disconnect
+            for code in self.nodes:
+                if city in self.nodes[code].destinations: # if some other city2 connects to city, disconnect
+                    self.nodes[code].disconnect(city)
             self.nodes.pop(city.info["code"], None)
             return True # successfully removed city from current graph
 
