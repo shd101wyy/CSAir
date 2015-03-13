@@ -9,12 +9,12 @@ class Query():
     def __init__(self, graph):
         self.graph = graph        #  bind graph
         if self.graph.nodes != {}:
-            self.queryRouteInfo()
+            self.queryAllRouteInfo()
 
     ## load json file
     def loadJSON(self, file_name):
         self.graph.loadJSON(file_name)
-        self.queryRouteInfo()     #  calculate route info
+        self.queryAllRouteInfo()     #  calculate route info
 
     ## get a list of all cities that csair flies to
     def getAllCities(self):
@@ -139,8 +139,62 @@ class Query():
             self.hub_cities.append(cities_and_their_num_of_outbound_flights[i][1])
             i += 1
 
+    # calculate layover time
+    def calculateLayoverTime(self, outbound_flights_num):
+        return 2 - (1/6) * (outbound_flights_num - 1)
+
+    # calculate flying time
+    def calculateFlyingTime(self, distance):
+        a = (750 - 0) / (400 / 750)
+        if distance <= 400:
+            half_distance = distance / 2
+            t = ((2 * half_distance) / a) ** 0.5
+            t = t * 2 # accelerate and decelerate
+        else:
+            t = ((2 * 200) / a) ** 0.5
+            t = t * 2   # accelerate and decelerate
+            t += (distance - 400)/750 # cruising
+        return t
+
+    # query information about the route among many cities
+    # return False if the route is invalid
+    def queryRouteInfo(self, list_of_cities):
+        print(list_of_cities)
+        total_distance = 0
+        total_cost = 0
+        total_time = 0
+        cost_per_km = 0.35
+        i = 0
+        while i < len(list_of_cities) - 1:
+            src = self.graph.getCityByNameOrCode(list_of_cities[0].strip())
+            dest = self.graph.getCityByNameOrCode(list_of_cities[1].strip())
+            if src == False or dest == False: # invalid src or dest
+                return False
+            if not (dest in src.destinations): # not connected
+                return False
+            distance = src.destinations[dest]
+            total_distance += distance
+
+            if cost_per_km == 0: # keep it free
+                pass
+            else: # decrease the cost for another leg
+                total_cost += cost_per_km * distance
+                cost_per_km -= 0.05
+
+            # add layover time
+            if i != 0:
+                total_time += self.calculateLayoverTime(len(src.destinations))
+            # add flying time
+            total_time += self.calculateFlyingTime(distance)
+            i += 1
+        return {"total_distance": total_distance,
+                "total_cost": total_cost,
+                "total_time": total_time}
+
+
+
     # query all required information
-    def queryRouteInfo(self):
+    def queryAllRouteInfo(self):
         self.getLongestSingleFlight()
         self.getShortestSingleFlight()
         self.getAverageDistance()

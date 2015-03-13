@@ -120,8 +120,22 @@ class TextBasedUserInterface(cmd.Cmd):
                 h. identifying CSAir's hub cities – the cities that have the most direct connections.
 
             usage:
-                route_info
+                route_info                        # show information about route network
+                route_info  city1 city2 city3     # calculate time, distance, and cost for that route
         """
+        if self.query.graph.nodes == {}: # no data yet
+            return
+        if len(line) != 0: # calculate route information
+            route_info =  self.query.queryRouteInfo(line.split(" "))
+            if route_info != False:
+                print("Total Distance: " + str(route_info["total_distance"]))
+                print("Total Cost: " + str(route_info["total_cost"]))
+                print("Total Time: " + str(route_info["total_time"])[0: 3] + " hours")
+            else:
+                print("Invalid route: " + line)
+            return
+
+
         # the longest single flight in the network
         print("\n* The longest single flight in the network: ")
         print("      from:     " + self.query.longest_single_flight["from"].info["name"])
