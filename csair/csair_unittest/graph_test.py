@@ -6,6 +6,7 @@ sys.path.insert(0, '../')
 from unittest import TestCase
 from csair.node import Node
 from csair.graph import Graph
+import json
 
 class TestGraph(TestCase):
     def testGenerateNode(self):
@@ -179,6 +180,24 @@ class TestGraph(TestCase):
         self.assertEqual(3, len(g.nodes.keys()))
         self.assertNotEqual(False, g.getCityByNameOrCode("Yoo"))
         self.assertNotEqual(False, g.getCityByNameOrCode("Yooo"))
+
+    def testJSONGeneration(self):
+        json_data = {
+                "metros": [
+                {
+			        "code" : "SCL" ,
+			        "name" : "Santiago" ,
+			        "country" : "CL" ,
+			        "continent" : "South America" ,
+			        "timezone" : -4 ,
+			        "coordinates" : {"S" : 33, "W" : 71} ,
+			        "population" : 6000000 ,
+			        "region" : 1
+		        }],
+                "routes": []
+        }
+        g = Graph(json_data=json_data)
+        self.assertEqual(g.convertGraphToJSON(), json_data)
 
     def testAddRoute(self):
         """
