@@ -21,6 +21,9 @@ class TextBasedUserInterface(cmd.Cmd):
         self.query = Query(graph)
 
     def do_EOF(self, line):
+        """
+            EOF
+        """
         return True
 
     def do_list_json_files(self, line):
