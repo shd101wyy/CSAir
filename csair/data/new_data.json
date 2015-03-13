@@ -1,175 +1,6 @@
 {
     "metros": [
         {
-            "code": "SAO",
-            "continent": "South America",
-            "coordinates": {
-                "S": 24,
-                "W": 47
-            },
-            "country": "BR",
-            "name": "Sao Paulo",
-            "population": 20900000,
-            "region": 1,
-            "timezone": -3
-        },
-        {
-            "code": "NYC",
-            "continent": "North America",
-            "coordinates": {
-                "N": 41,
-                "W": 74
-            },
-            "country": "US",
-            "name": "New York",
-            "population": 22200000,
-            "region": 3,
-            "timezone": -5
-        },
-        {
-            "code": "YYZ",
-            "continent": "North America",
-            "coordinates": {
-                "N": 44,
-                "W": 80
-            },
-            "country": "CA",
-            "name": "Toronto",
-            "population": 5750000,
-            "region": 3,
-            "timezone": -5
-        },
-        {
-            "code": "ATL",
-            "continent": "North America",
-            "coordinates": {
-                "N": 34,
-                "W": 84
-            },
-            "country": "US",
-            "name": "Atlanta",
-            "population": 5700000,
-            "region": 3,
-            "timezone": -5
-        },
-        {
-            "code": "PAR",
-            "continent": "Europe",
-            "coordinates": {
-                "E": 2,
-                "N": 49
-            },
-            "country": "FR",
-            "name": "Paris",
-            "population": 10400000,
-            "region": 3,
-            "timezone": 1
-        },
-        {
-            "code": "IST",
-            "continent": "Europe",
-            "coordinates": {
-                "E": 29,
-                "N": 41
-            },
-            "country": "TR",
-            "name": "Istanbul",
-            "population": 12800000,
-            "region": 2,
-            "timezone": 2
-        },
-        {
-            "code": "WAS",
-            "continent": "North America",
-            "coordinates": {
-                "N": 39,
-                "W": 77
-            },
-            "country": "US",
-            "name": "Washington",
-            "population": 8250000,
-            "region": 3,
-            "timezone": -5
-        },
-        {
-            "code": "MIL",
-            "continent": "Europe",
-            "coordinates": {
-                "E": 9,
-                "N": 45
-            },
-            "country": "IT",
-            "name": "Milan",
-            "population": 3575000,
-            "region": 3,
-            "timezone": 1
-        },
-        {
-            "code": "LOS",
-            "continent": "Africa",
-            "coordinates": {
-                "E": 19,
-                "N": 7
-            },
-            "country": "NG",
-            "name": "Lagos",
-            "population": 11800000,
-            "region": 1,
-            "timezone": 1
-        },
-        {
-            "code": "MIA",
-            "continent": "North America",
-            "coordinates": {
-                "N": 26,
-                "W": 80
-            },
-            "country": "US",
-            "name": "Miami",
-            "population": 5400000,
-            "region": 1,
-            "timezone": -5
-        },
-        {
-            "code": "BUE",
-            "continent": "South America",
-            "coordinates": {
-                "S": 35,
-                "W": 58
-            },
-            "country": "AR",
-            "name": "Buenos Aires",
-            "population": 13300000,
-            "region": 1,
-            "timezone": -3
-        },
-        {
-            "code": "SGN",
-            "continent": "Asia",
-            "coordinates": {
-                "E": 107,
-                "N": 11
-            },
-            "country": "VN",
-            "name": "Ho Chi Minh City",
-            "population": 6100000,
-            "region": 4,
-            "timezone": 7
-        },
-        {
-            "code": "PEK",
-            "continent": "Asia",
-            "coordinates": {
-                "E": 117,
-                "N": 40
-            },
-            "country": "CH",
-            "name": "Beijing",
-            "population": 13600000,
-            "region": 4,
-            "timezone": 8
-        },
-        {
             "code": "BGW",
             "continent": "Asia",
             "coordinates": {
@@ -183,132 +14,15 @@
             "timezone": 3.5
         },
         {
-            "code": "LON",
-            "continent": "Europe",
-            "coordinates": {
-                "N": 52,
-                "W": 0
-            },
-            "country": "UK",
-            "name": "London",
-            "population": 12400000,
-            "region": 3,
-            "timezone": 0
-        },
-        {
-            "code": "LED",
-            "continent": "Europe",
-            "coordinates": {
-                "E": 30,
-                "N": 60
-            },
-            "country": "RU",
-            "name": "St. Petersburg",
-            "population": 4775000,
-            "region": 3,
-            "timezone": 3
-        },
-        {
-            "code": "MAD",
-            "continent": "Europe",
-            "coordinates": {
-                "N": 40,
-                "W": 4
-            },
-            "country": "ES",
-            "name": "Madrid",
-            "population": 6200000,
-            "region": 3,
-            "timezone": 1
-        },
-        {
-            "code": "RUH",
-            "continent": "Asia",
-            "coordinates": {
-                "E": 47,
-                "N": 25
-            },
-            "country": "SA",
-            "name": "Riyadh",
-            "population": 5100000,
-            "region": 2,
-            "timezone": 3
-        },
-        {
-            "code": "DEL",
-            "continent": "Asia",
-            "coordinates": {
-                "E": 77,
-                "N": 29
-            },
-            "country": "IN",
-            "name": "Delhi",
-            "population": 23200000,
-            "region": 2,
-            "timezone": 5.5
-        },
-        {
-            "code": "SYD",
-            "continent": "Australia",
-            "coordinates": {
-                "E": 151,
-                "S": 34
-            },
-            "country": "AU",
-            "name": "Sydney",
-            "population": 4475000,
-            "region": 4,
-            "timezone": 10
-        },
-        {
-            "code": "MAA",
-            "continent": "Asia",
-            "coordinates": {
-                "E": 80,
-                "N": 13
-            },
-            "country": "IN",
-            "name": "Chennai",
-            "population": 8200000,
-            "region": 2,
-            "timezone": 5.5
-        },
-        {
-            "code": "FIH",
-            "continent": "Africa",
-            "coordinates": {
-                "E": 15,
-                "S": 4
-            },
-            "country": "CD",
-            "name": "Kinshasa",
-            "population": 8900000,
-            "region": 1,
-            "timezone": 1
-        },
-        {
-            "code": "JNB",
-            "continent": "Africa",
-            "coordinates": {
-                "E": 28,
-                "S": 26
-            },
-            "country": "ZA",
-            "name": "Johannesburg",
-            "population": 7550000,
-            "region": 1,
-            "timezone": 2
-        },
-        {
-            "code": "TPE",
+            "code": "MNL",
             "continent": "Asia",
             "coordinates": {
                 "E": 121,
-                "N": 25
+                "N": 15
             },
-            "country": "TW",
-            "name": "Taipei",
-            "population": 6800000,
+            "country": "PH",
+            "name": "Manila",
+            "population": 19600000,
             "region": 4,
             "timezone": 8
         },
@@ -326,17 +40,17 @@
             "timezone": 2
         },
         {
-            "code": "MNL",
+            "code": "TYO",
             "continent": "Asia",
             "coordinates": {
-                "E": 121,
-                "N": 15
+                "E": 140,
+                "N": 36
             },
-            "country": "PH",
-            "name": "Manila",
-            "population": 19600000,
+            "country": "JP",
+            "name": "Tokyo",
+            "population": 34000000,
             "region": 4,
-            "timezone": 8
+            "timezone": 9
         },
         {
             "code": "KHI",
@@ -350,6 +64,240 @@
             "population": 16200000,
             "region": 2,
             "timezone": 5
+        },
+        {
+            "code": "BUE",
+            "continent": "South America",
+            "coordinates": {
+                "S": 35,
+                "W": 58
+            },
+            "country": "AR",
+            "name": "Buenos Aires",
+            "population": 13300000,
+            "region": 1,
+            "timezone": -3
+        },
+        {
+            "code": "MIA",
+            "continent": "North America",
+            "coordinates": {
+                "N": 26,
+                "W": 80
+            },
+            "country": "US",
+            "name": "Miami",
+            "population": 5400000,
+            "region": 1,
+            "timezone": -5
+        },
+        {
+            "code": "LOS",
+            "continent": "Africa",
+            "coordinates": {
+                "E": 19,
+                "N": 7
+            },
+            "country": "NG",
+            "name": "Lagos",
+            "population": 11800000,
+            "region": 1,
+            "timezone": 1
+        },
+        {
+            "code": "PEK",
+            "continent": "Asia",
+            "coordinates": {
+                "E": 117,
+                "N": 40
+            },
+            "country": "CH",
+            "name": "Beijing",
+            "population": 13600000,
+            "region": 4,
+            "timezone": 8
+        },
+        {
+            "code": "LAX",
+            "continent": "North America",
+            "coordinates": {
+                "N": 34,
+                "W": 118
+            },
+            "country": "US",
+            "name": "Los Angeles",
+            "population": 17900000,
+            "region": 1,
+            "timezone": -8
+        },
+        {
+            "code": "MIL",
+            "continent": "Europe",
+            "coordinates": {
+                "E": 9,
+                "N": 45
+            },
+            "country": "IT",
+            "name": "Milan",
+            "population": 3575000,
+            "region": 3,
+            "timezone": 1
+        },
+        {
+            "code": "RUH",
+            "continent": "Asia",
+            "coordinates": {
+                "E": 47,
+                "N": 25
+            },
+            "country": "SA",
+            "name": "Riyadh",
+            "population": 5100000,
+            "region": 2,
+            "timezone": 3
+        },
+        {
+            "code": "PAR",
+            "continent": "Europe",
+            "coordinates": {
+                "E": 2,
+                "N": 49
+            },
+            "country": "FR",
+            "name": "Paris",
+            "population": 10400000,
+            "region": 3,
+            "timezone": 1
+        },
+        {
+            "code": "SHA",
+            "continent": "Asia",
+            "coordinates": {
+                "E": 121,
+                "N": 31
+            },
+            "country": "CH",
+            "name": "Shanghai",
+            "population": 18400000,
+            "region": 4,
+            "timezone": 8
+        },
+        {
+            "code": "OSA",
+            "continent": "Asia",
+            "coordinates": {
+                "E": 135,
+                "N": 35
+            },
+            "country": "JP",
+            "name": "Osaka",
+            "population": 16800000,
+            "region": 4,
+            "timezone": 9
+        },
+        {
+            "code": "HKG",
+            "continent": "Asia",
+            "coordinates": {
+                "E": 114,
+                "N": 22
+            },
+            "country": "CH",
+            "name": "Hong Kong",
+            "population": 7050000,
+            "region": 4,
+            "timezone": 8
+        },
+        {
+            "code": "FIH",
+            "continent": "Africa",
+            "coordinates": {
+                "E": 15,
+                "S": 4
+            },
+            "country": "CD",
+            "name": "Kinshasa",
+            "population": 8900000,
+            "region": 1,
+            "timezone": 1
+        },
+        {
+            "code": "BOG",
+            "continent": "South America",
+            "coordinates": {
+                "N": 5,
+                "W": 74
+            },
+            "country": "CO",
+            "name": "Bogota",
+            "population": 8600000,
+            "region": 1,
+            "timezone": -5
+        },
+        {
+            "code": "LIM",
+            "continent": "South America",
+            "coordinates": {
+                "S": 12,
+                "W": 77
+            },
+            "country": "PE",
+            "name": "Lima",
+            "population": 9050000,
+            "region": 1,
+            "timezone": -5
+        },
+        {
+            "code": "CHI",
+            "continent": "North America",
+            "coordinates": {
+                "N": 42,
+                "W": 88
+            },
+            "country": "US",
+            "name": "Chicago",
+            "population": 9850000,
+            "region": 3,
+            "timezone": -6
+        },
+        {
+            "code": "SAO",
+            "continent": "South America",
+            "coordinates": {
+                "S": 24,
+                "W": 47
+            },
+            "country": "BR",
+            "name": "Sao Paulo",
+            "population": 20900000,
+            "region": 1,
+            "timezone": -3
+        },
+        {
+            "code": "ESS",
+            "continent": "Europe",
+            "coordinates": {
+                "E": 7,
+                "N": 51
+            },
+            "country": "DE",
+            "name": "Essen",
+            "population": 589900,
+            "region": 3,
+            "timezone": 1
+        },
+        {
+            "code": "IST",
+            "continent": "Europe",
+            "coordinates": {
+                "E": 29,
+                "N": 41
+            },
+            "country": "TR",
+            "name": "Istanbul",
+            "population": 12800000,
+            "region": 2,
+            "timezone": 2
         },
         {
             "code": "THR",
@@ -378,134 +326,43 @@
             "timezone": -6
         },
         {
-            "code": "BOM",
-            "continent": "Asia",
-            "coordinates": {
-                "E": 73,
-                "N": 19
-            },
-            "country": "IN",
-            "name": "Mumbai",
-            "population": 22800000,
-            "region": 2,
-            "timezone": 5.5
-        },
-        {
-            "code": "BOG",
-            "continent": "South America",
-            "coordinates": {
-                "N": 5,
-                "W": 74
-            },
-            "country": "CO",
-            "name": "Bogota",
-            "population": 8600000,
-            "region": 1,
-            "timezone": -5
-        },
-        {
-            "code": "CCU",
-            "continent": "Asia",
-            "coordinates": {
-                "E": 88,
-                "N": 24
-            },
-            "country": "IN",
-            "name": "Calcutta",
-            "population": 16300000,
-            "region": 2,
-            "timezone": 5.5
-        },
-        {
-            "code": "JKT",
-            "continent": "Asia",
-            "coordinates": {
-                "E": 107,
-                "S": 6
-            },
-            "country": "ID",
-            "name": "Jakarta",
-            "population": 15400000,
-            "region": 4,
-            "timezone": 7
-        },
-        {
-            "code": "LIM",
-            "continent": "South America",
-            "coordinates": {
-                "S": 12,
-                "W": 77
-            },
-            "country": "PE",
-            "name": "Lima",
-            "population": 9050000,
-            "region": 1,
-            "timezone": -5
-        },
-        {
-            "code": "ALG",
-            "continent": "Africa",
-            "coordinates": {
-                "E": 3,
-                "N": 37
-            },
-            "country": "DZ",
-            "name": "Algiers",
-            "population": 3175000,
-            "region": 2,
-            "timezone": 1
-        },
-        {
-            "code": "SCL",
-            "continent": "South America",
-            "coordinates": {
-                "S": 33,
-                "W": 71
-            },
-            "country": "CL",
-            "name": "Santiago",
-            "population": 6000000,
-            "region": 1,
-            "timezone": -4
-        },
-        {
-            "code": "LAX",
-            "continent": "North America",
-            "coordinates": {
-                "N": 34,
-                "W": 118
-            },
-            "country": "US",
-            "name": "Los Angeles",
-            "population": 17900000,
-            "region": 1,
-            "timezone": -8
-        },
-        {
-            "code": "HKG",
-            "continent": "Asia",
-            "coordinates": {
-                "E": 114,
-                "N": 22
-            },
-            "country": "CH",
-            "name": "Hong Kong",
-            "population": 7050000,
-            "region": 4,
-            "timezone": 8
-        },
-        {
-            "code": "ESS",
+            "code": "MAD",
             "continent": "Europe",
             "coordinates": {
-                "E": 7,
-                "N": 51
+                "N": 40,
+                "W": 4
             },
-            "country": "DE",
-            "name": "Essen",
-            "population": 589900,
+            "country": "ES",
+            "name": "Madrid",
+            "population": 6200000,
             "region": 3,
             "timezone": 1
+        },
+        {
+            "code": "YYZ",
+            "continent": "North America",
+            "coordinates": {
+                "N": 44,
+                "W": 80
+            },
+            "country": "CA",
+            "name": "Toronto",
+            "population": 5750000,
+            "region": 3,
+            "timezone": -5
+        },
+        {
+            "code": "LON",
+            "continent": "Europe",
+            "coordinates": {
+                "N": 52,
+                "W": 0
+            },
+            "country": "UK",
+            "name": "London",
+            "population": 12400000,
+            "region": 3,
+            "timezone": 0
         },
         {
             "code": "SFO",
@@ -521,82 +378,69 @@
             "timezone": -8
         },
         {
-            "code": "MOW",
-            "continent": "Europe",
-            "coordinates": {
-                "E": 38,
-                "N": 56
-            },
-            "country": "RU",
-            "name": "Moscow",
-            "population": 13600000,
-            "region": 2,
-            "timezone": 3
-        },
-        {
-            "code": "SHA",
+            "code": "JKT",
             "continent": "Asia",
             "coordinates": {
-                "E": 121,
-                "N": 31
+                "E": 107,
+                "S": 6
             },
-            "country": "CH",
-            "name": "Shanghai",
-            "population": 18400000,
-            "region": 4,
-            "timezone": 8
-        },
-        {
-            "code": "ICN",
-            "continent": "Asia",
-            "coordinates": {
-                "E": 126,
-                "N": 37
-            },
-            "country": "KR",
-            "name": "Seoul",
-            "population": 24200000,
-            "region": 4,
-            "timezone": 9
-        },
-        {
-            "code": "CHI",
-            "continent": "North America",
-            "coordinates": {
-                "N": 42,
-                "W": 88
-            },
-            "country": "US",
-            "name": "Chicago",
-            "population": 9850000,
-            "region": 3,
-            "timezone": -6
-        },
-        {
-            "code": "BKK",
-            "continent": "Asia",
-            "coordinates": {
-                "E": 101,
-                "N": 14
-            },
-            "country": "TH",
-            "name": "Bangkok",
-            "population": 8900000,
+            "country": "ID",
+            "name": "Jakarta",
+            "population": 15400000,
             "region": 4,
             "timezone": 7
         },
         {
-            "code": "OSA",
+            "code": "ATL",
+            "continent": "North America",
+            "coordinates": {
+                "N": 34,
+                "W": 84
+            },
+            "country": "US",
+            "name": "Atlanta",
+            "population": 5700000,
+            "region": 3,
+            "timezone": -5
+        },
+        {
+            "code": "DEL",
             "continent": "Asia",
             "coordinates": {
-                "E": 135,
-                "N": 35
+                "E": 77,
+                "N": 29
             },
-            "country": "JP",
-            "name": "Osaka",
-            "population": 16800000,
-            "region": 4,
-            "timezone": 9
+            "country": "IN",
+            "name": "Delhi",
+            "population": 23200000,
+            "region": 2,
+            "timezone": 5.5
+        },
+        {
+            "code": "MAA",
+            "continent": "Asia",
+            "coordinates": {
+                "E": 80,
+                "N": 13
+            },
+            "country": "IN",
+            "name": "Chennai",
+            "population": 8200000,
+            "region": 2,
+            "timezone": 5.5
+        },
+        {
+            "code": "JNB",
+            "continent": "Africa",
+            "coordinates": {
+                "E": 28,
+                "S": 26
+            },
+            "country": "ZA",
+            "name": "Johannesburg",
+            "population": 7550000,
+            "region": 1,
+            "timezone": 2
         },
         {
             "code": "KRT",
@@ -612,347 +456,194 @@
             "timezone": 3
         },
         {
-            "code": "TYO",
+            "code": "LED",
+            "continent": "Europe",
+            "coordinates": {
+                "E": 30,
+                "N": 60
+            },
+            "country": "RU",
+            "name": "St. Petersburg",
+            "population": 4775000,
+            "region": 3,
+            "timezone": 3
+        },
+        {
+            "code": "SGN",
             "continent": "Asia",
             "coordinates": {
-                "E": 140,
-                "N": 36
+                "E": 107,
+                "N": 11
             },
-            "country": "JP",
-            "name": "Tokyo",
-            "population": 34000000,
+            "country": "VN",
+            "name": "Ho Chi Minh City",
+            "population": 6100000,
+            "region": 4,
+            "timezone": 7
+        },
+        {
+            "code": "CCU",
+            "continent": "Asia",
+            "coordinates": {
+                "E": 88,
+                "N": 24
+            },
+            "country": "IN",
+            "name": "Calcutta",
+            "population": 16300000,
+            "region": 2,
+            "timezone": 5.5
+        },
+        {
+            "code": "SCL",
+            "continent": "South America",
+            "coordinates": {
+                "S": 33,
+                "W": 71
+            },
+            "country": "CL",
+            "name": "Santiago",
+            "population": 6000000,
+            "region": 1,
+            "timezone": -4
+        },
+        {
+            "code": "SYD",
+            "continent": "Australia",
+            "coordinates": {
+                "E": 151,
+                "S": 34
+            },
+            "country": "AU",
+            "name": "Sydney",
+            "population": 4475000,
+            "region": 4,
+            "timezone": 10
+        },
+        {
+            "code": "NYC",
+            "continent": "North America",
+            "coordinates": {
+                "N": 41,
+                "W": 74
+            },
+            "country": "US",
+            "name": "New York",
+            "population": 22200000,
+            "region": 3,
+            "timezone": -5
+        },
+        {
+            "code": "WAS",
+            "continent": "North America",
+            "coordinates": {
+                "N": 39,
+                "W": 77
+            },
+            "country": "US",
+            "name": "Washington",
+            "population": 8250000,
+            "region": 3,
+            "timezone": -5
+        },
+        {
+            "code": "TPE",
+            "continent": "Asia",
+            "coordinates": {
+                "E": 121,
+                "N": 25
+            },
+            "country": "TW",
+            "name": "Taipei",
+            "population": 6800000,
+            "region": 4,
+            "timezone": 8
+        },
+        {
+            "code": "MOW",
+            "continent": "Europe",
+            "coordinates": {
+                "E": 38,
+                "N": 56
+            },
+            "country": "RU",
+            "name": "Moscow",
+            "population": 13600000,
+            "region": 2,
+            "timezone": 3
+        },
+        {
+            "code": "BKK",
+            "continent": "Asia",
+            "coordinates": {
+                "E": 101,
+                "N": 14
+            },
+            "country": "TH",
+            "name": "Bangkok",
+            "population": 8900000,
+            "region": 4,
+            "timezone": 7
+        },
+        {
+            "code": "BOM",
+            "continent": "Asia",
+            "coordinates": {
+                "E": 73,
+                "N": 19
+            },
+            "country": "IN",
+            "name": "Mumbai",
+            "population": 22800000,
+            "region": 2,
+            "timezone": 5.5
+        },
+        {
+            "code": "ALG",
+            "continent": "Africa",
+            "coordinates": {
+                "E": 3,
+                "N": 37
+            },
+            "country": "DZ",
+            "name": "Algiers",
+            "population": 3175000,
+            "region": 2,
+            "timezone": 1
+        },
+        {
+            "code": "CMI",
+            "continent": "North America",
+            "coordinates": {
+                "N": 40,
+                "W": 88
+            },
+            "country": "US",
+            "name": "Champaign",
+            "population": 226000,
+            "region": 1,
+            "timezone": -6
+        },
+        {
+            "code": "ICN",
+            "continent": "Asia",
+            "coordinates": {
+                "E": 126,
+                "N": 37
+            },
+            "country": "KR",
+            "name": "Seoul",
+            "population": 24200000,
             "region": 4,
             "timezone": 9
         }
     ],
     "routes": [
         {
-            "distance": 6367,
+            "distance": 1264,
             "ports": [
-                "SAO",
-                "LOS"
-            ]
-        },
-        {
-            "distance": 1680,
-            "ports": [
-                "SAO",
-                "BUE"
-            ]
-        },
-        {
-            "distance": 8373,
-            "ports": [
-                "SAO",
-                "MAD"
-            ]
-        },
-        {
-            "distance": 4323,
-            "ports": [
-                "SAO",
-                "BOG"
-            ]
-        },
-        {
-            "distance": 568,
-            "ports": [
-                "NYC",
-                "YYZ"
-            ]
-        },
-        {
-            "distance": 5579,
-            "ports": [
-                "NYC",
-                "LON"
-            ]
-        },
-        {
-            "distance": 5786,
-            "ports": [
-                "NYC",
-                "MAD"
-            ]
-        },
-        {
-            "distance": 334,
-            "ports": [
-                "NYC",
-                "WAS"
-            ]
-        },
-        {
-            "distance": 575,
-            "ports": [
-                "YYZ",
-                "WAS"
-            ]
-        },
-        {
-            "distance": 568,
-            "ports": [
-                "YYZ",
-                "NYC"
-            ]
-        },
-        {
-            "distance": 684,
-            "ports": [
-                "YYZ",
-                "CHI"
-            ]
-        },
-        {
-            "distance": 883,
-            "ports": [
-                "ATL",
-                "WAS"
-            ]
-        },
-        {
-            "distance": 957,
-            "ports": [
-                "ATL",
-                "MIA"
-            ]
-        },
-        {
-            "distance": 958,
-            "ports": [
-                "ATL",
-                "CHI"
-            ]
-        },
-        {
-            "distance": 643,
-            "ports": [
-                "PAR",
-                "MIL"
-            ]
-        },
-        {
-            "distance": 343,
-            "ports": [
-                "PAR",
-                "LON"
-            ]
-        },
-        {
-            "distance": 1354,
-            "ports": [
-                "PAR",
-                "ALG"
-            ]
-        },
-        {
-            "distance": 433,
-            "ports": [
-                "PAR",
-                "ESS"
-            ]
-        },
-        {
-            "distance": 1041,
-            "ports": [
-                "PAR",
-                "MAD"
-            ]
-        },
-        {
-            "distance": 1763,
-            "ports": [
-                "IST",
-                "MOW"
-            ]
-        },
-        {
-            "distance": 1227,
-            "ports": [
-                "IST",
+                "BGW",
                 "CAI"
-            ]
-        },
-        {
-            "distance": 1665,
-            "ports": [
-                "IST",
-                "MIL"
-            ]
-        },
-        {
-            "distance": 1354,
-            "ports": [
-                "IST",
-                "ALG"
-            ]
-        },
-        {
-            "distance": 1612,
-            "ports": [
-                "IST",
-                "BGW"
-            ]
-        },
-        {
-            "distance": 2096,
-            "ports": [
-                "IST",
-                "LED"
-            ]
-        },
-        {
-            "distance": 575,
-            "ports": [
-                "WAS",
-                "YYZ"
-            ]
-        },
-        {
-            "distance": 883,
-            "ports": [
-                "WAS",
-                "ATL"
-            ]
-        },
-        {
-            "distance": 334,
-            "ports": [
-                "WAS",
-                "NYC"
-            ]
-        },
-        {
-            "distance": 1483,
-            "ports": [
-                "WAS",
-                "MIA"
-            ]
-        },
-        {
-            "distance": 681,
-            "ports": [
-                "MIL",
-                "ESS"
-            ]
-        },
-        {
-            "distance": 643,
-            "ports": [
-                "MIL",
-                "PAR"
-            ]
-        },
-        {
-            "distance": 1665,
-            "ports": [
-                "MIL",
-                "IST"
-            ]
-        },
-        {
-            "distance": 3341,
-            "ports": [
-                "LOS",
-                "KRT"
-            ]
-        },
-        {
-            "distance": 1812,
-            "ports": [
-                "LOS",
-                "FIH"
-            ]
-        },
-        {
-            "distance": 6367,
-            "ports": [
-                "LOS",
-                "SAO"
-            ]
-        },
-        {
-            "distance": 1483,
-            "ports": [
-                "MIA",
-                "WAS"
-            ]
-        },
-        {
-            "distance": 957,
-            "ports": [
-                "MIA",
-                "ATL"
-            ]
-        },
-        {
-            "distance": 2053,
-            "ports": [
-                "MIA",
-                "MEX"
-            ]
-        },
-        {
-            "distance": 2425,
-            "ports": [
-                "MIA",
-                "BOG"
-            ]
-        },
-        {
-            "distance": 1680,
-            "ports": [
-                "BUE",
-                "SAO"
-            ]
-        },
-        {
-            "distance": 4651,
-            "ports": [
-                "BUE",
-                "BOG"
-            ]
-        },
-        {
-            "distance": 1488,
-            "ports": [
-                "SGN",
-                "HKG"
-            ]
-        },
-        {
-            "distance": 1613,
-            "ports": [
-                "SGN",
-                "MNL"
-            ]
-        },
-        {
-            "distance": 716,
-            "ports": [
-                "SGN",
-                "BKK"
-            ]
-        },
-        {
-            "distance": 1878,
-            "ports": [
-                "SGN",
-                "JKT"
-            ]
-        },
-        {
-            "distance": 904,
-            "ports": [
-                "PEK",
-                "ICN"
-            ]
-        },
-        {
-            "distance": 1075,
-            "ports": [
-                "PEK",
-                "SHA"
             ]
         },
         {
@@ -980,314 +671,6 @@
             "distance": 1612,
             "ports": [
                 "BGW",
-                "IST"
-            ]
-        },
-        {
-            "distance": 1264,
-            "ports": [
-                "BGW",
-                "CAI"
-            ]
-        },
-        {
-            "distance": 494,
-            "ports": [
-                "LON",
-                "ESS"
-            ]
-        },
-        {
-            "distance": 5579,
-            "ports": [
-                "LON",
-                "NYC"
-            ]
-        },
-        {
-            "distance": 5786,
-            "ports": [
-                "LON",
-                "MAD"
-            ]
-        },
-        {
-            "distance": 343,
-            "ports": [
-                "LON",
-                "PAR"
-            ]
-        },
-        {
-            "distance": 626,
-            "ports": [
-                "LED",
-                "MOW"
-            ]
-        },
-        {
-            "distance": 1728,
-            "ports": [
-                "LED",
-                "ESS"
-            ]
-        },
-        {
-            "distance": 2096,
-            "ports": [
-                "LED",
-                "IST"
-            ]
-        },
-        {
-            "distance": 5786,
-            "ports": [
-                "MAD",
-                "LON"
-            ]
-        },
-        {
-            "distance": 726,
-            "ports": [
-                "MAD",
-                "ALG"
-            ]
-        },
-        {
-            "distance": 8373,
-            "ports": [
-                "MAD",
-                "SAO"
-            ]
-        },
-        {
-            "distance": 1041,
-            "ports": [
-                "MAD",
-                "PAR"
-            ]
-        },
-        {
-            "distance": 5786,
-            "ports": [
-                "MAD",
-                "NYC"
-            ]
-        },
-        {
-            "distance": 951,
-            "ports": [
-                "RUH",
-                "BGW"
-            ]
-        },
-        {
-            "distance": 2065,
-            "ports": [
-                "RUH",
-                "KHI"
-            ]
-        },
-        {
-            "distance": 1269,
-            "ports": [
-                "RUH",
-                "THR"
-            ]
-        },
-        {
-            "distance": 1614,
-            "ports": [
-                "RUH",
-                "CAI"
-            ]
-        },
-        {
-            "distance": 1313,
-            "ports": [
-                "DEL",
-                "CCU"
-            ]
-        },
-        {
-            "distance": 1135,
-            "ports": [
-                "DEL",
-                "BOM"
-            ]
-        },
-        {
-            "distance": 1069,
-            "ports": [
-                "DEL",
-                "KHI"
-            ]
-        },
-        {
-            "distance": 2550,
-            "ports": [
-                "DEL",
-                "THR"
-            ]
-        },
-        {
-            "distance": 1753,
-            "ports": [
-                "DEL",
-                "MAA"
-            ]
-        },
-        {
-            "distance": 12051,
-            "ports": [
-                "SYD",
-                "LAX"
-            ]
-        },
-        {
-            "distance": 5502,
-            "ports": [
-                "SYD",
-                "JKT"
-            ]
-        },
-        {
-            "distance": 6243,
-            "ports": [
-                "SYD",
-                "MNL"
-            ]
-        },
-        {
-            "distance": 1753,
-            "ports": [
-                "MAA",
-                "DEL"
-            ]
-        },
-        {
-            "distance": 3627,
-            "ports": [
-                "MAA",
-                "JKT"
-            ]
-        },
-        {
-            "distance": 1382,
-            "ports": [
-                "MAA",
-                "CCU"
-            ]
-        },
-        {
-            "distance": 1033,
-            "ports": [
-                "MAA",
-                "BOM"
-            ]
-        },
-        {
-            "distance": 2229,
-            "ports": [
-                "MAA",
-                "BKK"
-            ]
-        },
-        {
-            "distance": 2767,
-            "ports": [
-                "FIH",
-                "JNB"
-            ]
-        },
-        {
-            "distance": 1812,
-            "ports": [
-                "FIH",
-                "LOS"
-            ]
-        },
-        {
-            "distance": 2904,
-            "ports": [
-                "FIH",
-                "KRT"
-            ]
-        },
-        {
-            "distance": 4640,
-            "ports": [
-                "JNB",
-                "KRT"
-            ]
-        },
-        {
-            "distance": 2767,
-            "ports": [
-                "JNB",
-                "FIH"
-            ]
-        },
-        {
-            "distance": 807,
-            "ports": [
-                "TPE",
-                "HKG"
-            ]
-        },
-        {
-            "distance": 1170,
-            "ports": [
-                "TPE",
-                "MNL"
-            ]
-        },
-        {
-            "distance": 1740,
-            "ports": [
-                "TPE",
-                "OSA"
-            ]
-        },
-        {
-            "distance": 678,
-            "ports": [
-                "TPE",
-                "SHA"
-            ]
-        },
-        {
-            "distance": 1614,
-            "ports": [
-                "CAI",
-                "RUH"
-            ]
-        },
-        {
-            "distance": 2710,
-            "ports": [
-                "CAI",
-                "ALG"
-            ]
-        },
-        {
-            "distance": 1614,
-            "ports": [
-                "CAI",
-                "KRT"
-            ]
-        },
-        {
-            "distance": 1264,
-            "ports": [
-                "CAI",
-                "BGW"
-            ]
-        },
-        {
-            "distance": 1227,
-            "ports": [
-                "CAI",
                 "IST"
             ]
         },
@@ -1327,6 +710,69 @@
             ]
         },
         {
+            "distance": 1264,
+            "ports": [
+                "CAI",
+                "BGW"
+            ]
+        },
+        {
+            "distance": 1614,
+            "ports": [
+                "CAI",
+                "RUH"
+            ]
+        },
+        {
+            "distance": 2710,
+            "ports": [
+                "CAI",
+                "ALG"
+            ]
+        },
+        {
+            "distance": 1614,
+            "ports": [
+                "CAI",
+                "KRT"
+            ]
+        },
+        {
+            "distance": 1227,
+            "ports": [
+                "CAI",
+                "IST"
+            ]
+        },
+        {
+            "distance": 407,
+            "ports": [
+                "TYO",
+                "OSA"
+            ]
+        },
+        {
+            "distance": 8296,
+            "ports": [
+                "TYO",
+                "SFO"
+            ]
+        },
+        {
+            "distance": 1207,
+            "ports": [
+                "TYO",
+                "ICN"
+            ]
+        },
+        {
+            "distance": 1782,
+            "ports": [
+                "TYO",
+                "SHA"
+            ]
+        },
+        {
             "distance": 1069,
             "ports": [
                 "KHI",
@@ -1362,101 +808,318 @@
             ]
         },
         {
-            "distance": 2550,
+            "distance": 1680,
             "ports": [
-                "THR",
-                "DEL"
+                "BUE",
+                "SAO"
             ]
         },
         {
-            "distance": 1269,
+            "distance": 4651,
             "ports": [
-                "THR",
-                "RUH"
-            ]
-        },
-        {
-            "distance": 704,
-            "ports": [
-                "THR",
-                "BGW"
-            ]
-        },
-        {
-            "distance": 2462,
-            "ports": [
-                "THR",
-                "MOW"
-            ]
-        },
-        {
-            "distance": 1933,
-            "ports": [
-                "THR",
-                "KHI"
-            ]
-        },
-        {
-            "distance": 2499,
-            "ports": [
-                "MEX",
-                "LAX"
-            ]
-        },
-        {
-            "distance": 2714,
-            "ports": [
-                "MEX",
-                "CHI"
-            ]
-        },
-        {
-            "distance": 3158,
-            "ports": [
-                "MEX",
+                "BUE",
                 "BOG"
             ]
         },
         {
             "distance": 2053,
             "ports": [
-                "MEX",
-                "MIA"
+                "MIA",
+                "MEX"
             ]
         },
         {
-            "distance": 4231,
+            "distance": 1085,
             "ports": [
-                "MEX",
-                "LIM"
+                "MIA",
+                "CMI"
             ]
         },
         {
-            "distance": 1135,
+            "distance": 957,
             "ports": [
-                "BOM",
-                "DEL"
+                "MIA",
+                "ATL"
             ]
         },
         {
-            "distance": 873,
+            "distance": 2425,
             "ports": [
-                "BOM",
+                "MIA",
+                "BOG"
+            ]
+        },
+        {
+            "distance": 1483,
+            "ports": [
+                "MIA",
+                "WAS"
+            ]
+        },
+        {
+            "distance": 1812,
+            "ports": [
+                "LOS",
+                "FIH"
+            ]
+        },
+        {
+            "distance": 6367,
+            "ports": [
+                "LOS",
+                "SAO"
+            ]
+        },
+        {
+            "distance": 3341,
+            "ports": [
+                "LOS",
+                "KRT"
+            ]
+        },
+        {
+            "distance": 904,
+            "ports": [
+                "PEK",
+                "ICN"
+            ]
+        },
+        {
+            "distance": 1075,
+            "ports": [
+                "PEK",
+                "SHA"
+            ]
+        },
+        {
+            "distance": 2499,
+            "ports": [
+                "LAX",
+                "MEX"
+            ]
+        },
+        {
+            "distance": 2828,
+            "ports": [
+                "LAX",
+                "CHI"
+            ]
+        },
+        {
+            "distance": 1710,
+            "ports": [
+                "LAX",
+                "CMI"
+            ]
+        },
+        {
+            "distance": 543,
+            "ports": [
+                "LAX",
+                "SFO"
+            ]
+        },
+        {
+            "distance": 12051,
+            "ports": [
+                "LAX",
+                "SYD"
+            ]
+        },
+        {
+            "distance": 681,
+            "ports": [
+                "MIL",
+                "ESS"
+            ]
+        },
+        {
+            "distance": 643,
+            "ports": [
+                "MIL",
+                "PAR"
+            ]
+        },
+        {
+            "distance": 1665,
+            "ports": [
+                "MIL",
+                "IST"
+            ]
+        },
+        {
+            "distance": 1614,
+            "ports": [
+                "RUH",
+                "CAI"
+            ]
+        },
+        {
+            "distance": 951,
+            "ports": [
+                "RUH",
+                "BGW"
+            ]
+        },
+        {
+            "distance": 2065,
+            "ports": [
+                "RUH",
                 "KHI"
             ]
         },
         {
-            "distance": 1033,
+            "distance": 1269,
             "ports": [
-                "BOM",
-                "MAA"
+                "RUH",
+                "THR"
             ]
         },
         {
-            "distance": 4651,
+            "distance": 643,
             "ports": [
-                "BOG",
-                "BUE"
+                "PAR",
+                "MIL"
+            ]
+        },
+        {
+            "distance": 343,
+            "ports": [
+                "PAR",
+                "LON"
+            ]
+        },
+        {
+            "distance": 1354,
+            "ports": [
+                "PAR",
+                "ALG"
+            ]
+        },
+        {
+            "distance": 433,
+            "ports": [
+                "PAR",
+                "ESS"
+            ]
+        },
+        {
+            "distance": 1041,
+            "ports": [
+                "PAR",
+                "MAD"
+            ]
+        },
+        {
+            "distance": 1782,
+            "ports": [
+                "SHA",
+                "TYO"
+            ]
+        },
+        {
+            "distance": 1075,
+            "ports": [
+                "SHA",
+                "PEK"
+            ]
+        },
+        {
+            "distance": 1230,
+            "ports": [
+                "SHA",
+                "HKG"
+            ]
+        },
+        {
+            "distance": 840,
+            "ports": [
+                "SHA",
+                "ICN"
+            ]
+        },
+        {
+            "distance": 678,
+            "ports": [
+                "SHA",
+                "TPE"
+            ]
+        },
+        {
+            "distance": 407,
+            "ports": [
+                "OSA",
+                "TYO"
+            ]
+        },
+        {
+            "distance": 1740,
+            "ports": [
+                "OSA",
+                "TPE"
+            ]
+        },
+        {
+            "distance": 1144,
+            "ports": [
+                "HKG",
+                "MNL"
+            ]
+        },
+        {
+            "distance": 1488,
+            "ports": [
+                "HKG",
+                "SGN"
+            ]
+        },
+        {
+            "distance": 1688,
+            "ports": [
+                "HKG",
+                "BKK"
+            ]
+        },
+        {
+            "distance": 2618,
+            "ports": [
+                "HKG",
+                "CCU"
+            ]
+        },
+        {
+            "distance": 1230,
+            "ports": [
+                "HKG",
+                "SHA"
+            ]
+        },
+        {
+            "distance": 807,
+            "ports": [
+                "HKG",
+                "TPE"
+            ]
+        },
+        {
+            "distance": 2904,
+            "ports": [
+                "FIH",
+                "KRT"
+            ]
+        },
+        {
+            "distance": 2767,
+            "ports": [
+                "FIH",
+                "JNB"
+            ]
+        },
+        {
+            "distance": 1812,
+            "ports": [
+                "FIH",
+                "LOS"
             ]
         },
         {
@@ -1474,10 +1137,10 @@
             ]
         },
         {
-            "distance": 2425,
+            "distance": 4651,
             "ports": [
                 "BOG",
-                "MIA"
+                "BUE"
             ]
         },
         {
@@ -1488,59 +1151,10 @@
             ]
         },
         {
-            "distance": 1313,
+            "distance": 2425,
             "ports": [
-                "CCU",
-                "DEL"
-            ]
-        },
-        {
-            "distance": 2618,
-            "ports": [
-                "CCU",
-                "HKG"
-            ]
-        },
-        {
-            "distance": 1636,
-            "ports": [
-                "CCU",
-                "BKK"
-            ]
-        },
-        {
-            "distance": 1382,
-            "ports": [
-                "CCU",
-                "MAA"
-            ]
-        },
-        {
-            "distance": 5502,
-            "ports": [
-                "JKT",
-                "SYD"
-            ]
-        },
-        {
-            "distance": 1878,
-            "ports": [
-                "JKT",
-                "SGN"
-            ]
-        },
-        {
-            "distance": 2295,
-            "ports": [
-                "JKT",
-                "BKK"
-            ]
-        },
-        {
-            "distance": 3627,
-            "ports": [
-                "JKT",
-                "MAA"
+                "BOG",
+                "MIA"
             ]
         },
         {
@@ -1565,108 +1179,80 @@
             ]
         },
         {
-            "distance": 1354,
+            "distance": 132,
             "ports": [
-                "ALG",
-                "IST"
-            ]
-        },
-        {
-            "distance": 1354,
-            "ports": [
-                "ALG",
-                "PAR"
-            ]
-        },
-        {
-            "distance": 726,
-            "ports": [
-                "ALG",
-                "MAD"
-            ]
-        },
-        {
-            "distance": 2710,
-            "ports": [
-                "ALG",
-                "CAI"
-            ]
-        },
-        {
-            "distance": 2453,
-            "ports": [
-                "SCL",
-                "LIM"
-            ]
-        },
-        {
-            "distance": 2499,
-            "ports": [
-                "LAX",
-                "MEX"
-            ]
-        },
-        {
-            "distance": 12051,
-            "ports": [
-                "LAX",
-                "SYD"
-            ]
-        },
-        {
-            "distance": 543,
-            "ports": [
-                "LAX",
-                "SFO"
+                "CHI",
+                "CMI"
             ]
         },
         {
             "distance": 2828,
             "ports": [
-                "LAX",
-                "CHI"
+                "CHI",
+                "LAX"
             ]
         },
         {
-            "distance": 2618,
+            "distance": 2994,
             "ports": [
-                "HKG",
-                "CCU"
+                "CHI",
+                "SFO"
             ]
         },
         {
-            "distance": 1488,
+            "distance": 2714,
             "ports": [
-                "HKG",
-                "SGN"
+                "CHI",
+                "MEX"
             ]
         },
         {
-            "distance": 1688,
+            "distance": 684,
             "ports": [
-                "HKG",
-                "BKK"
+                "CHI",
+                "YYZ"
             ]
         },
         {
-            "distance": 1230,
+            "distance": 958,
             "ports": [
-                "HKG",
-                "SHA"
+                "CHI",
+                "ATL"
             ]
         },
         {
-            "distance": 807,
+            "distance": 8373,
             "ports": [
-                "HKG",
-                "TPE"
+                "SAO",
+                "MAD"
             ]
         },
         {
-            "distance": 1144,
+            "distance": 4323,
             "ports": [
-                "HKG",
-                "MNL"
+                "SAO",
+                "BOG"
+            ]
+        },
+        {
+            "distance": 6367,
+            "ports": [
+                "SAO",
+                "LOS"
+            ]
+        },
+        {
+            "distance": 1680,
+            "ports": [
+                "SAO",
+                "BUE"
+            ]
+        },
+        {
+            "distance": 1728,
+            "ports": [
+                "ESS",
+                "LED"
             ]
         },
         {
@@ -1691,10 +1277,220 @@
             ]
         },
         {
-            "distance": 1728,
+            "distance": 2096,
             "ports": [
-                "ESS",
+                "IST",
                 "LED"
+            ]
+        },
+        {
+            "distance": 1612,
+            "ports": [
+                "IST",
+                "BGW"
+            ]
+        },
+        {
+            "distance": 1763,
+            "ports": [
+                "IST",
+                "MOW"
+            ]
+        },
+        {
+            "distance": 1227,
+            "ports": [
+                "IST",
+                "CAI"
+            ]
+        },
+        {
+            "distance": 1665,
+            "ports": [
+                "IST",
+                "MIL"
+            ]
+        },
+        {
+            "distance": 1354,
+            "ports": [
+                "IST",
+                "ALG"
+            ]
+        },
+        {
+            "distance": 2550,
+            "ports": [
+                "THR",
+                "DEL"
+            ]
+        },
+        {
+            "distance": 1269,
+            "ports": [
+                "THR",
+                "RUH"
+            ]
+        },
+        {
+            "distance": 704,
+            "ports": [
+                "THR",
+                "BGW"
+            ]
+        },
+        {
+            "distance": 2462,
+            "ports": [
+                "THR",
+                "MOW"
+            ]
+        },
+        {
+            "distance": 1933,
+            "ports": [
+                "THR",
+                "KHI"
+            ]
+        },
+        {
+            "distance": 1557,
+            "ports": [
+                "MEX",
+                "CMI"
+            ]
+        },
+        {
+            "distance": 2499,
+            "ports": [
+                "MEX",
+                "LAX"
+            ]
+        },
+        {
+            "distance": 4231,
+            "ports": [
+                "MEX",
+                "LIM"
+            ]
+        },
+        {
+            "distance": 2714,
+            "ports": [
+                "MEX",
+                "CHI"
+            ]
+        },
+        {
+            "distance": 3158,
+            "ports": [
+                "MEX",
+                "BOG"
+            ]
+        },
+        {
+            "distance": 2053,
+            "ports": [
+                "MEX",
+                "MIA"
+            ]
+        },
+        {
+            "distance": 8373,
+            "ports": [
+                "MAD",
+                "SAO"
+            ]
+        },
+        {
+            "distance": 726,
+            "ports": [
+                "MAD",
+                "ALG"
+            ]
+        },
+        {
+            "distance": 1041,
+            "ports": [
+                "MAD",
+                "PAR"
+            ]
+        },
+        {
+            "distance": 5786,
+            "ports": [
+                "MAD",
+                "LON"
+            ]
+        },
+        {
+            "distance": 5786,
+            "ports": [
+                "MAD",
+                "NYC"
+            ]
+        },
+        {
+            "distance": 684,
+            "ports": [
+                "YYZ",
+                "CHI"
+            ]
+        },
+        {
+            "distance": 512,
+            "ports": [
+                "YYZ",
+                "CMI"
+            ]
+        },
+        {
+            "distance": 575,
+            "ports": [
+                "YYZ",
+                "WAS"
+            ]
+        },
+        {
+            "distance": 568,
+            "ports": [
+                "YYZ",
+                "NYC"
+            ]
+        },
+        {
+            "distance": 343,
+            "ports": [
+                "LON",
+                "PAR"
+            ]
+        },
+        {
+            "distance": 494,
+            "ports": [
+                "LON",
+                "ESS"
+            ]
+        },
+        {
+            "distance": 5579,
+            "ports": [
+                "LON",
+                "NYC"
+            ]
+        },
+        {
+            "distance": 5786,
+            "ports": [
+                "LON",
+                "MAD"
+            ]
+        },
+        {
+            "distance": 8296,
+            "ports": [
+                "SFO",
+                "TYO"
             ]
         },
         {
@@ -1712,6 +1508,13 @@
             ]
         },
         {
+            "distance": 1836,
+            "ports": [
+                "SFO",
+                "CMI"
+            ]
+        },
+        {
             "distance": 2994,
             "ports": [
                 "SFO",
@@ -1719,10 +1522,381 @@
             ]
         },
         {
-            "distance": 8296,
+            "distance": 3627,
             "ports": [
-                "SFO",
-                "TYO"
+                "JKT",
+                "MAA"
+            ]
+        },
+        {
+            "distance": 5502,
+            "ports": [
+                "JKT",
+                "SYD"
+            ]
+        },
+        {
+            "distance": 1878,
+            "ports": [
+                "JKT",
+                "SGN"
+            ]
+        },
+        {
+            "distance": 2295,
+            "ports": [
+                "JKT",
+                "BKK"
+            ]
+        },
+        {
+            "distance": 958,
+            "ports": [
+                "ATL",
+                "CHI"
+            ]
+        },
+        {
+            "distance": 490,
+            "ports": [
+                "ATL",
+                "CMI"
+            ]
+        },
+        {
+            "distance": 883,
+            "ports": [
+                "ATL",
+                "WAS"
+            ]
+        },
+        {
+            "distance": 957,
+            "ports": [
+                "ATL",
+                "MIA"
+            ]
+        },
+        {
+            "distance": 1753,
+            "ports": [
+                "DEL",
+                "MAA"
+            ]
+        },
+        {
+            "distance": 1313,
+            "ports": [
+                "DEL",
+                "CCU"
+            ]
+        },
+        {
+            "distance": 1135,
+            "ports": [
+                "DEL",
+                "BOM"
+            ]
+        },
+        {
+            "distance": 1069,
+            "ports": [
+                "DEL",
+                "KHI"
+            ]
+        },
+        {
+            "distance": 2550,
+            "ports": [
+                "DEL",
+                "THR"
+            ]
+        },
+        {
+            "distance": 1753,
+            "ports": [
+                "MAA",
+                "DEL"
+            ]
+        },
+        {
+            "distance": 3627,
+            "ports": [
+                "MAA",
+                "JKT"
+            ]
+        },
+        {
+            "distance": 1382,
+            "ports": [
+                "MAA",
+                "CCU"
+            ]
+        },
+        {
+            "distance": 1033,
+            "ports": [
+                "MAA",
+                "BOM"
+            ]
+        },
+        {
+            "distance": 2229,
+            "ports": [
+                "MAA",
+                "BKK"
+            ]
+        },
+        {
+            "distance": 2767,
+            "ports": [
+                "JNB",
+                "FIH"
+            ]
+        },
+        {
+            "distance": 4640,
+            "ports": [
+                "JNB",
+                "KRT"
+            ]
+        },
+        {
+            "distance": 1614,
+            "ports": [
+                "KRT",
+                "CAI"
+            ]
+        },
+        {
+            "distance": 2904,
+            "ports": [
+                "KRT",
+                "FIH"
+            ]
+        },
+        {
+            "distance": 4640,
+            "ports": [
+                "KRT",
+                "JNB"
+            ]
+        },
+        {
+            "distance": 3341,
+            "ports": [
+                "KRT",
+                "LOS"
+            ]
+        },
+        {
+            "distance": 626,
+            "ports": [
+                "LED",
+                "MOW"
+            ]
+        },
+        {
+            "distance": 1728,
+            "ports": [
+                "LED",
+                "ESS"
+            ]
+        },
+        {
+            "distance": 2096,
+            "ports": [
+                "LED",
+                "IST"
+            ]
+        },
+        {
+            "distance": 1488,
+            "ports": [
+                "SGN",
+                "HKG"
+            ]
+        },
+        {
+            "distance": 1613,
+            "ports": [
+                "SGN",
+                "MNL"
+            ]
+        },
+        {
+            "distance": 1878,
+            "ports": [
+                "SGN",
+                "JKT"
+            ]
+        },
+        {
+            "distance": 716,
+            "ports": [
+                "SGN",
+                "BKK"
+            ]
+        },
+        {
+            "distance": 1382,
+            "ports": [
+                "CCU",
+                "MAA"
+            ]
+        },
+        {
+            "distance": 1313,
+            "ports": [
+                "CCU",
+                "DEL"
+            ]
+        },
+        {
+            "distance": 2618,
+            "ports": [
+                "CCU",
+                "HKG"
+            ]
+        },
+        {
+            "distance": 1636,
+            "ports": [
+                "CCU",
+                "BKK"
+            ]
+        },
+        {
+            "distance": 2453,
+            "ports": [
+                "SCL",
+                "LIM"
+            ]
+        },
+        {
+            "distance": 12051,
+            "ports": [
+                "SYD",
+                "LAX"
+            ]
+        },
+        {
+            "distance": 5502,
+            "ports": [
+                "SYD",
+                "JKT"
+            ]
+        },
+        {
+            "distance": 6243,
+            "ports": [
+                "SYD",
+                "MNL"
+            ]
+        },
+        {
+            "distance": 755,
+            "ports": [
+                "NYC",
+                "CMI"
+            ]
+        },
+        {
+            "distance": 568,
+            "ports": [
+                "NYC",
+                "YYZ"
+            ]
+        },
+        {
+            "distance": 5579,
+            "ports": [
+                "NYC",
+                "LON"
+            ]
+        },
+        {
+            "distance": 334,
+            "ports": [
+                "NYC",
+                "WAS"
+            ]
+        },
+        {
+            "distance": 5786,
+            "ports": [
+                "NYC",
+                "MAD"
+            ]
+        },
+        {
+            "distance": 606,
+            "ports": [
+                "WAS",
+                "CMI"
+            ]
+        },
+        {
+            "distance": 575,
+            "ports": [
+                "WAS",
+                "YYZ"
+            ]
+        },
+        {
+            "distance": 883,
+            "ports": [
+                "WAS",
+                "ATL"
+            ]
+        },
+        {
+            "distance": 334,
+            "ports": [
+                "WAS",
+                "NYC"
+            ]
+        },
+        {
+            "distance": 1483,
+            "ports": [
+                "WAS",
+                "MIA"
+            ]
+        },
+        {
+            "distance": 807,
+            "ports": [
+                "TPE",
+                "HKG"
+            ]
+        },
+        {
+            "distance": 1170,
+            "ports": [
+                "TPE",
+                "MNL"
+            ]
+        },
+        {
+            "distance": 1740,
+            "ports": [
+                "TPE",
+                "OSA"
+            ]
+        },
+        {
+            "distance": 678,
+            "ports": [
+                "TPE",
+                "SHA"
+            ]
+        },
+        {
+            "distance": 626,
+            "ports": [
+                "MOW",
+                "LED"
             ]
         },
         {
@@ -1740,101 +1914,10 @@
             ]
         },
         {
-            "distance": 626,
+            "distance": 2229,
             "ports": [
-                "MOW",
-                "LED"
-            ]
-        },
-        {
-            "distance": 1075,
-            "ports": [
-                "SHA",
-                "PEK"
-            ]
-        },
-        {
-            "distance": 1230,
-            "ports": [
-                "SHA",
-                "HKG"
-            ]
-        },
-        {
-            "distance": 840,
-            "ports": [
-                "SHA",
-                "ICN"
-            ]
-        },
-        {
-            "distance": 678,
-            "ports": [
-                "SHA",
-                "TPE"
-            ]
-        },
-        {
-            "distance": 1782,
-            "ports": [
-                "SHA",
-                "TYO"
-            ]
-        },
-        {
-            "distance": 904,
-            "ports": [
-                "ICN",
-                "PEK"
-            ]
-        },
-        {
-            "distance": 840,
-            "ports": [
-                "ICN",
-                "SHA"
-            ]
-        },
-        {
-            "distance": 1207,
-            "ports": [
-                "ICN",
-                "TYO"
-            ]
-        },
-        {
-            "distance": 2828,
-            "ports": [
-                "CHI",
-                "LAX"
-            ]
-        },
-        {
-            "distance": 684,
-            "ports": [
-                "CHI",
-                "YYZ"
-            ]
-        },
-        {
-            "distance": 958,
-            "ports": [
-                "CHI",
-                "ATL"
-            ]
-        },
-        {
-            "distance": 2714,
-            "ports": [
-                "CHI",
-                "MEX"
-            ]
-        },
-        {
-            "distance": 2994,
-            "ports": [
-                "CHI",
-                "SFO"
+                "BKK",
+                "MAA"
             ]
         },
         {
@@ -1866,79 +1949,135 @@
             ]
         },
         {
-            "distance": 2229,
+            "distance": 1033,
             "ports": [
-                "BKK",
+                "BOM",
                 "MAA"
             ]
         },
         {
-            "distance": 1740,
+            "distance": 1135,
             "ports": [
-                "OSA",
-                "TPE"
+                "BOM",
+                "DEL"
             ]
         },
         {
-            "distance": 407,
+            "distance": 873,
             "ports": [
-                "OSA",
-                "TYO"
+                "BOM",
+                "KHI"
             ]
         },
         {
-            "distance": 4640,
+            "distance": 2710,
             "ports": [
-                "KRT",
-                "JNB"
-            ]
-        },
-        {
-            "distance": 3341,
-            "ports": [
-                "KRT",
-                "LOS"
-            ]
-        },
-        {
-            "distance": 2904,
-            "ports": [
-                "KRT",
-                "FIH"
-            ]
-        },
-        {
-            "distance": 1614,
-            "ports": [
-                "KRT",
+                "ALG",
                 "CAI"
             ]
         },
         {
-            "distance": 407,
+            "distance": 1354,
             "ports": [
-                "TYO",
-                "OSA"
+                "ALG",
+                "IST"
             ]
         },
         {
-            "distance": 8296,
+            "distance": 1354,
             "ports": [
-                "TYO",
+                "ALG",
+                "PAR"
+            ]
+        },
+        {
+            "distance": 726,
+            "ports": [
+                "ALG",
+                "MAD"
+            ]
+        },
+        {
+            "distance": 132,
+            "ports": [
+                "CMI",
+                "CHI"
+            ]
+        },
+        {
+            "distance": 1710,
+            "ports": [
+                "CMI",
+                "LAX"
+            ]
+        },
+        {
+            "distance": 606,
+            "ports": [
+                "CMI",
+                "WAS"
+            ]
+        },
+        {
+            "distance": 1836,
+            "ports": [
+                "CMI",
                 "SFO"
+            ]
+        },
+        {
+            "distance": 755,
+            "ports": [
+                "CMI",
+                "NYC"
+            ]
+        },
+        {
+            "distance": 1557,
+            "ports": [
+                "CMI",
+                "MEX"
+            ]
+        },
+        {
+            "distance": 512,
+            "ports": [
+                "CMI",
+                "YYZ"
+            ]
+        },
+        {
+            "distance": 490,
+            "ports": [
+                "CMI",
+                "ATL"
+            ]
+        },
+        {
+            "distance": 1085,
+            "ports": [
+                "CMI",
+                "MIA"
             ]
         },
         {
             "distance": 1207,
             "ports": [
-                "TYO",
-                "ICN"
+                "ICN",
+                "TYO"
             ]
         },
         {
-            "distance": 1782,
+            "distance": 904,
             "ports": [
-                "TYO",
+                "ICN",
+                "PEK"
+            ]
+        },
+        {
+            "distance": 840,
+            "ports": [
+                "ICN",
                 "SHA"
             ]
         }

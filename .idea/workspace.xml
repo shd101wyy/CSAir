@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="525a8ad0-2965-45ff-8f18-757d468f3785" name="Default" comment="">
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/csair/data/champaign.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/csair/data/champaign_drected.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/csair/data/data.json" afterPath="$PROJECT_DIR$/csair/data/data.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/csair/graph.py" afterPath="$PROJECT_DIR$/csair/graph.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/csair/csair_unittest/graph_test.py" afterPath="$PROJECT_DIR$/csair/csair_unittest/graph_test.py" />
@@ -46,20 +47,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="new_data.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/csair/data/new_data.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.1764705" vertical-offset="20238" max-vertical-offset="29265">
-              <caret line="1360" column="21" selection-start-line="1360" selection-start-column="16" selection-end-line="1360" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="query.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="query.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/csair/query.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8113208" vertical-offset="3372" max-vertical-offset="3750">
+            <state vertical-scroll-proportion="-9.555555" vertical-offset="3372" max-vertical-offset="3750">
               <caret line="243" column="56" selection-start-line="243" selection-start-column="56" selection-end-line="243" selection-end-column="56" />
               <folding />
             </state>
@@ -93,8 +84,18 @@
       <file leaf-file-name="champaign.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/csair/data/champaign.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-29.541666" vertical-offset="86" max-vertical-offset="885">
-              <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+            <state vertical-scroll-proportion="-5.625" vertical-offset="0" max-vertical-offset="885">
+              <caret line="9" column="7" selection-start-line="0" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="champaign_drected.json" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/csair/data/champaign_drected.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.6407186" vertical-offset="926" max-vertical-offset="1305">
+              <caret line="76" column="30" selection-start-line="76" selection-start-column="30" selection-end-line="76" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -163,6 +164,7 @@
         <option value="$PROJECT_DIR$/csair/data/champaign.json" />
         <option value="$PROJECT_DIR$/csair/graph.py" />
         <option value="$PROJECT_DIR$/csair/query.py" />
+        <option value="$PROJECT_DIR$/csair/data/champaign_drected.json" />
       </list>
     </option>
   </component>
@@ -574,10 +576,10 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3048611" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3048611" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32460734" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.5474795" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.5474795" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -816,14 +818,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/csair/data/champaign.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-29.541666" vertical-offset="86" max-vertical-offset="885">
-          <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/csair/csair_unittest/graph_test.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="3377" max-vertical-offset="3915">
@@ -844,8 +838,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/csair/query.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8113208" vertical-offset="3372" max-vertical-offset="3750">
+        <state vertical-scroll-proportion="-9.555555" vertical-offset="3372" max-vertical-offset="3750">
           <caret line="243" column="56" selection-start-line="243" selection-start-column="56" selection-end-line="243" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/csair/data/champaign.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.625" vertical-offset="0" max-vertical-offset="885">
+          <caret line="9" column="7" selection-start-line="0" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/csair/data/champaign_drected.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6407186" vertical-offset="926" max-vertical-offset="1305">
+          <caret line="76" column="30" selection-start-line="76" selection-start-column="30" selection-end-line="76" selection-end-column="30" />
           <folding />
         </state>
       </provider>
